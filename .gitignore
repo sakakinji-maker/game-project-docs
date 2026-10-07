@@ -1,5 +1,19 @@
+# 운영체제에서 만드는 파일
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# 편집기 캐시
+.vs/
+.idea/
+
+# 임시 파일과 백업·충돌 잔여 파일
 *.tmp
 *.bak
+*.swp
+*.swo
+*~
+~$*
+.~lock.*
+*.orig
+*.rej
