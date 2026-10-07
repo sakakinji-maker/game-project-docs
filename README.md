@@ -2,6 +2,8 @@
 
 게임 아이디어, 기획서, 시나리오와 캐릭터 설정을 보관합니다.
 
+GitHub 저장소: [sakakinji-maker/game-project-docs](https://github.com/sakakinji-maker/game-project-docs) · 비공개
+
 ## 애프터라이트: 마지막 도시
 
 미래의 포스트 아포칼립스를 배경으로 한 미소녀 수집·육성형 방치형 RPG입니다.
@@ -25,3 +27,4 @@
 ## 문서 변경 반영
 
 문서를 수정한 뒤 커밋하고 push하면 GitHub 저장소에 반영됩니다.
+
