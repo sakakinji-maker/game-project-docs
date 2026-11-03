@@ -50,13 +50,13 @@
 
 ## 주요 에셋 위치
 
-아래는 로컬 Unity 프로젝트 `Assets/Sunfall/Resources/` 아래 경로입니다. 이미지 자체는 이번 문서 업로드에 포함하지 않습니다.
+아래는 로컬 Unity 프로젝트 `Assets/Sunfall/Resources/` 아래 경로입니다. 이미지 자체도 [게임 프로젝트](../game/Sunfall/Assets/Sunfall/Resources/)에 포함되어 있습니다.
 
 | 경로 | 용도 |
 |---|---|
 | `World/SunlessForest.png` | 1층 숲 배경·스타일 기준 |
 | `World/ForestRuinPropsV1.png` | 새 폐허 소품 아틀라스 |
-| `World/Stage2PixelRoomsV2.png` | 현재 2층 네 방 배경 |
+| `World/Stage2GateHDV3.png`, `Stage2CloisterHDV3.png`, `Stage2SealHallHDV3.png`, `Stage2BossCryptHDV3.png` | 현재 2층 방별 고해상도 배경 |
 | `World/Stage2PixelSealV2.png` | 현재 2층 닫힘/열림 봉인 |
 | `World/RuinPlatform.png` | 1·2층 도트 석조 발판 |
 | `World/EmberVillageV1.png` | 마을 배경 |
@@ -81,3 +81,11 @@
 - 장비 효과의 가시성 보완과 공격 장비 강화 상향.
 
 이는 수정한 내용의 기록입니다. 각 수정의 최종 화면·감각은 사용자 QA로 확인해야 합니다.
+
+## 해상도 후속 개선
+
+네 방을 한 아틀라스로 묶으면서 방별 원본이 1086×362였고, 확대 표시로 픽셀이 거칠어졌습니다. 현재는 각 방을 2172×724 개별 PNG로 재제작하고 1층과 같은 2070×690으로 표시합니다. V2 아틀라스는 과거 에셋으로 보존하지만 로드하지 않습니다.
+
+![2스테이지 첫 방 고해상도 배경](../game/Sunfall/Assets/Sunfall/Resources/World/Stage2GateHDV3.png)
+
+[전체 생성 프롬프트·검증 기록](../game/Sunfall/docs/STAGE2_HD_BACKGROUNDS.md)

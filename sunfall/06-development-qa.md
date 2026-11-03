@@ -51,7 +51,7 @@ F10은 장비·골드·성장·현재 모험·스토리 시청 기록을 지웁�
 | 2층 도트 스타일 통일 | `Temp/Stage2PixelStyleCompile/compile.log` | 동일 4종 통과 |
 | 개발자 스테이지 이동 | `Temp/DeveloperChapterCompile/compile.log` | 동일 4종 통과 |
 
-컴파일 스크립트는 프로젝트 상위 `tools/Compile-AttackArt.ps1`입니다. Unity 내장 Roslyn과 로컬 Library 참조를 사용하므로 이 문서 저장소만 내려받아 실행할 수 있는 도구는 아닙니다.
+컴파일 스크립트는 프로젝트 상위 `tools/Compile-AttackArt.ps1`입니다. Unity 내장 Roslyn과 로컬 Library 참조를 사용하므로 새 체크아웃에서는 먼저 Unity에서 프로젝트를 열어 Library를 생성해야 합니다.
 
 ## 사용자 QA 체크리스트
 

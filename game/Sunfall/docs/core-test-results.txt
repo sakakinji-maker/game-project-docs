@@ -1,0 +1,19 @@
+PASS same seed spawn
+PASS same seed platforms
+PASS jump starts
+PASS gravity lands
+PASS world left bound
+PASS damage equals displayed stats
+PASS attack cooldown
+PASS invulnerability blocks repeated damage
+PASS unique rewards
+PASS invalid reward index rejected
+PASS reward selected exactly once
+PASS full run reaches clear
+PASS no rewards after win
+PASS death blocks clear reward
+PASS new run resets stats
+PASS different seeds vary map
+PASS 1000 seeds: safe spawns, deterministic rewards, complete run transitions
+PASS 25 seeds: combat bot wins using movement, attacks, boss jumps and one reward per room
+18 checks passed

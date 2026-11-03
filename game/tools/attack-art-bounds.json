@@ -1,0 +1,1311 @@
+[
+  {
+    "name": "Combo1V3",
+    "frames": [
+      {
+        "transparentPixels": 173634,
+        "edgePixels": 0,
+        "pivot": [
+          270,
+          375
+        ],
+        "bounds": [
+          149,
+          128,
+          319,
+          249
+        ]
+      },
+      {
+        "transparentPixels": 172628,
+        "edgePixels": 0,
+        "pivot": [
+          780,
+          375
+        ],
+        "bounds": [
+          661,
+          50,
+          207,
+          327
+        ]
+      },
+      {
+        "transparentPixels": 159536,
+        "edgePixels": 0,
+        "pivot": [
+          295,
+          744
+        ],
+        "bounds": [
+          172,
+          430,
+          215,
+          315
+        ]
+      },
+      {
+        "transparentPixels": 142437,
+        "edgePixels": 0,
+        "pivot": [
+          770,
+          744
+        ],
+        "bounds": [
+          635,
+          457,
+          294,
+          288
+        ]
+      },
+      {
+        "transparentPixels": 132373,
+        "edgePixels": 0,
+        "pivot": [
+          265,
+          1102
+        ],
+        "bounds": [
+          119,
+          811,
+          334,
+          293
+        ]
+      },
+      {
+        "transparentPixels": 147838,
+        "edgePixels": 0,
+        "pivot": [
+          755,
+          1102
+        ],
+        "bounds": [
+          623,
+          880,
+          339,
+          224
+        ]
+      },
+      {
+        "transparentPixels": 160920,
+        "edgePixels": 0,
+        "pivot": [
+          260,
+          1461
+        ],
+        "bounds": [
+          114,
+          1202,
+          344,
+          260
+        ]
+      },
+      {
+        "transparentPixels": 159749,
+        "edgePixels": 0,
+        "pivot": [
+          765,
+          1461
+        ],
+        "bounds": [
+          619,
+          1202,
+          345,
+          260
+        ]
+      }
+    ],
+    "scale": 0.3,
+    "resource": "Hero/Combat/Combo1V3"
+  },
+  {
+    "name": "Combo2V3",
+    "frames": [
+      {
+        "transparentPixels": 158008,
+        "edgePixels": 0,
+        "pivot": [
+          260,
+          342
+        ],
+        "bounds": [
+          130,
+          72,
+          331,
+          272
+        ]
+      },
+      {
+        "transparentPixels": 158933,
+        "edgePixels": 0,
+        "pivot": [
+          747,
+          342
+        ],
+        "bounds": [
+          618,
+          79,
+          315,
+          265
+        ]
+      },
+      {
+        "transparentPixels": 158532,
+        "edgePixels": 0,
+        "pivot": [
+          263,
+          726
+        ],
+        "bounds": [
+          128,
+          413,
+          331,
+          312
+        ]
+      },
+      {
+        "transparentPixels": 140357,
+        "edgePixels": 0,
+        "pivot": [
+          728,
+          726
+        ],
+        "bounds": [
+          591,
+          426,
+          364,
+          302
+        ]
+      },
+      {
+        "transparentPixels": 158166,
+        "edgePixels": 0,
+        "pivot": [
+          220,
+          1135
+        ],
+        "bounds": [
+          119,
+          784,
+          277,
+          352
+        ]
+      },
+      {
+        "transparentPixels": 150217,
+        "edgePixels": 0,
+        "pivot": [
+          720,
+          1135
+        ],
+        "bounds": [
+          589,
+          790,
+          306,
+          346
+        ]
+      },
+      {
+        "transparentPixels": 140858,
+        "edgePixels": 0,
+        "pivot": [
+          260,
+          1505
+        ],
+        "bounds": [
+          129,
+          1179,
+          323,
+          327
+        ]
+      },
+      {
+        "transparentPixels": 155217,
+        "edgePixels": 0,
+        "pivot": [
+          825,
+          1505
+        ],
+        "bounds": [
+          678,
+          1186,
+          248,
+          320
+        ]
+      }
+    ],
+    "scale": 0.28,
+    "resource": "Hero/Combat/Combo2V3"
+  },
+  {
+    "name": "Combo3V3",
+    "frames": [
+      {
+        "transparentPixels": 158657,
+        "edgePixels": 0,
+        "pivot": [
+          280,
+          384
+        ],
+        "bounds": [
+          109,
+          51,
+          294,
+          335
+        ]
+      },
+      {
+        "transparentPixels": 153114,
+        "edgePixels": 0,
+        "pivot": [
+          780,
+          384
+        ],
+        "bounds": [
+          603,
+          66,
+          331,
+          320
+        ]
+      },
+      {
+        "transparentPixels": 191955,
+        "edgePixels": 0,
+        "pivot": [
+          287,
+          795
+        ],
+        "bounds": [
+          136,
+          388,
+          285,
+          409
+        ]
+      },
+      {
+        "transparentPixels": 159710,
+        "edgePixels": 0,
+        "pivot": [
+          727,
+          795
+        ],
+        "bounds": [
+          579,
+          459,
+          407,
+          338
+        ]
+      },
+      {
+        "transparentPixels": 102113,
+        "edgePixels": 0,
+        "pivot": [
+          240,
+          1123
+        ],
+        "bounds": [
+          74,
+          887,
+          409,
+          237
+        ]
+      },
+      {
+        "transparentPixels": 112933,
+        "edgePixels": 0,
+        "pivot": [
+          740,
+          1123
+        ],
+        "bounds": [
+          572,
+          891,
+          422,
+          233
+        ]
+      },
+      {
+        "transparentPixels": 182042,
+        "edgePixels": 0,
+        "pivot": [
+          250,
+          1474
+        ],
+        "bounds": [
+          93,
+          1234,
+          470,
+          241
+        ]
+      },
+      {
+        "transparentPixels": 139617,
+        "edgePixels": 0,
+        "pivot": [
+          720,
+          1474
+        ],
+        "bounds": [
+          614,
+          1151,
+          312,
+          325
+        ]
+      }
+    ],
+    "scale": 0.28,
+    "resource": "Hero/Combat/Combo3V3"
+  },
+  {
+    "name": "AirSlashV3",
+    "frames": [
+      {
+        "transparentPixels": 173797,
+        "edgePixels": 0,
+        "pivot": [
+          260,
+          381.6666666666667
+        ],
+        "bounds": [
+          116,
+          87,
+          217,
+          266
+        ]
+      },
+      {
+        "transparentPixels": 172046,
+        "edgePixels": 0,
+        "pivot": [
+          750,
+          396.6666666666667
+        ],
+        "bounds": [
+          621,
+          54,
+          203,
+          313
+        ]
+      },
+      {
+        "transparentPixels": 149665,
+        "edgePixels": 0,
+        "pivot": [
+          300,
+          766.6666666666667
+        ],
+        "bounds": [
+          160,
+          421,
+          213,
+          318
+        ]
+      },
+      {
+        "transparentPixels": 112854,
+        "edgePixels": 0,
+        "pivot": [
+          710,
+          766.6666666666667
+        ],
+        "bounds": [
+          646,
+          469,
+          340,
+          271
+        ]
+      },
+      {
+        "transparentPixels": 121445,
+        "edgePixels": 0,
+        "pivot": [
+          200,
+          1116.6666666666667
+        ],
+        "bounds": [
+          120,
+          786,
+          320,
+          323
+        ]
+      },
+      {
+        "transparentPixels": 142862,
+        "edgePixels": 0,
+        "pivot": [
+          710,
+          1126.6666666666667
+        ],
+        "bounds": [
+          639,
+          847,
+          334,
+          248
+        ]
+      },
+      {
+        "transparentPixels": 164851,
+        "edgePixels": 0,
+        "pivot": [
+          245,
+          1486.6666666666667
+        ],
+        "bounds": [
+          160,
+          1203,
+          296,
+          262
+        ]
+      },
+      {
+        "transparentPixels": 163902,
+        "edgePixels": 0,
+        "pivot": [
+          735,
+          1496.6666666666667
+        ],
+        "bounds": [
+          605,
+          1206,
+          322,
+          263
+        ]
+      }
+    ],
+    "scale": 0.3,
+    "resource": "Hero/Combat/AirSlashV3"
+  },
+  {
+    "name": "EmberCastV3",
+    "frames": [
+      {
+        "transparentPixels": 168959,
+        "edgePixels": 0,
+        "pivot": [
+          258,
+          355
+        ],
+        "bounds": [
+          136,
+          62,
+          312,
+          296
+        ]
+      },
+      {
+        "transparentPixels": 166433,
+        "edgePixels": 0,
+        "pivot": [
+          745,
+          358
+        ],
+        "bounds": [
+          625,
+          64,
+          312,
+          295
+        ]
+      },
+      {
+        "transparentPixels": 145901,
+        "edgePixels": 0,
+        "pivot": [
+          255,
+          735
+        ],
+        "bounds": [
+          130,
+          431,
+          321,
+          305
+        ]
+      },
+      {
+        "transparentPixels": 128122,
+        "edgePixels": 0,
+        "pivot": [
+          745,
+          733
+        ],
+        "bounds": [
+          614,
+          437,
+          372,
+          298
+        ]
+      },
+      {
+        "transparentPixels": 127422,
+        "edgePixels": 0,
+        "pivot": [
+          225,
+          1110
+        ],
+        "bounds": [
+          109,
+          809,
+          397,
+          303
+        ]
+      },
+      {
+        "transparentPixels": 147322,
+        "edgePixels": 0,
+        "pivot": [
+          742,
+          1110
+        ],
+        "bounds": [
+          615,
+          813,
+          299,
+          298
+        ]
+      },
+      {
+        "transparentPixels": 156646,
+        "edgePixels": 0,
+        "pivot": [
+          255,
+          1485
+        ],
+        "bounds": [
+          128,
+          1180,
+          325,
+          306
+        ]
+      },
+      {
+        "transparentPixels": 158029,
+        "edgePixels": 0,
+        "pivot": [
+          742,
+          1485
+        ],
+        "bounds": [
+          616,
+          1178,
+          320,
+          308
+        ]
+      }
+    ],
+    "scale": 0.255,
+    "resource": "Hero/Combat/EmberCastV3"
+  },
+  {
+    "name": "MeleeAttackV2",
+    "frames": [
+      {
+        "transparentPixels": 141345,
+        "edgePixels": 0,
+        "pivot": [
+          285,
+          377
+        ],
+        "bounds": [
+          112,
+          66,
+          335,
+          314
+        ]
+      },
+      {
+        "transparentPixels": 143948,
+        "edgePixels": 0,
+        "pivot": [
+          790,
+          377
+        ],
+        "bounds": [
+          578,
+          75,
+          318,
+          304
+        ]
+      },
+      {
+        "transparentPixels": 139942,
+        "edgePixels": 0,
+        "pivot": [
+          345,
+          769
+        ],
+        "bounds": [
+          146,
+          416,
+          294,
+          355
+        ]
+      },
+      {
+        "transparentPixels": 125274,
+        "edgePixels": 0,
+        "pivot": [
+          775,
+          769
+        ],
+        "bounds": [
+          583,
+          484,
+          407,
+          287
+        ]
+      },
+      {
+        "transparentPixels": 99008,
+        "edgePixels": 0,
+        "pivot": [
+          280,
+          1132
+        ],
+        "bounds": [
+          89,
+          831,
+          415,
+          303
+        ]
+      },
+      {
+        "transparentPixels": 113970,
+        "edgePixels": 0,
+        "pivot": [
+          775,
+          1132
+        ],
+        "bounds": [
+          573,
+          817,
+          365,
+          317
+        ]
+      },
+      {
+        "transparentPixels": 127001,
+        "edgePixels": 0,
+        "pivot": [
+          290,
+          1495
+        ],
+        "bounds": [
+          114,
+          1174,
+          356,
+          322
+        ]
+      },
+      {
+        "transparentPixels": 124931,
+        "edgePixels": 0,
+        "pivot": [
+          785,
+          1495
+        ],
+        "bounds": [
+          574,
+          1171,
+          354,
+          326
+        ]
+      }
+    ],
+    "scale": 0.24,
+    "resource": "Demons/MeleeAttackV2"
+  },
+  {
+    "name": "ArcherAttackV2",
+    "frames": [
+      {
+        "transparentPixels": 133063,
+        "edgePixels": 0,
+        "pivot": [
+          285,
+          385
+        ],
+        "bounds": [
+          117,
+          48,
+          302,
+          338
+        ]
+      },
+      {
+        "transparentPixels": 128552,
+        "edgePixels": 13,
+        "pivot": [
+          740,
+          387
+        ],
+        "bounds": [
+          581,
+          15,
+          335,
+          374
+        ]
+      },
+      {
+        "transparentPixels": 124212,
+        "edgePixels": 0,
+        "pivot": [
+          278,
+          768
+        ],
+        "bounds": [
+          93,
+          388,
+          363,
+          382
+        ]
+      },
+      {
+        "transparentPixels": 103123,
+        "edgePixels": 0,
+        "pivot": [
+          755,
+          769
+        ],
+        "bounds": [
+          555,
+          390,
+          435,
+          381
+        ]
+      },
+      {
+        "transparentPixels": 124380,
+        "edgePixels": 0,
+        "pivot": [
+          285,
+          1155
+        ],
+        "bounds": [
+          85,
+          780,
+          355,
+          376
+        ]
+      },
+      {
+        "transparentPixels": 132748,
+        "edgePixels": 0,
+        "pivot": [
+          747,
+          1155
+        ],
+        "bounds": [
+          586,
+          821,
+          328,
+          335
+        ]
+      },
+      {
+        "transparentPixels": 121176,
+        "edgePixels": 0,
+        "pivot": [
+          290,
+          1517
+        ],
+        "bounds": [
+          114,
+          1183,
+          322,
+          335
+        ]
+      },
+      {
+        "transparentPixels": 121770,
+        "edgePixels": 0,
+        "pivot": [
+          755,
+          1517
+        ],
+        "bounds": [
+          612,
+          1176,
+          310,
+          342
+        ]
+      }
+    ],
+    "scale": 0.22,
+    "resource": "Demons/ArcherAttackV2"
+  },
+  {
+    "name": "HeavyAttackV2",
+    "frames": [
+      {
+        "transparentPixels": 124272,
+        "edgePixels": 0,
+        "pivot": [
+          275,
+          378
+        ],
+        "bounds": [
+          75,
+          57,
+          391,
+          326
+        ]
+      },
+      {
+        "transparentPixels": 126311,
+        "edgePixels": 0,
+        "pivot": [
+          805,
+          387
+        ],
+        "bounds": [
+          591,
+          20,
+          346,
+          370
+        ]
+      },
+      {
+        "transparentPixels": 120382,
+        "edgePixels": 0,
+        "pivot": [
+          335,
+          774
+        ],
+        "bounds": [
+          102,
+          393,
+          367,
+          383
+        ]
+      },
+      {
+        "transparentPixels": 94631,
+        "edgePixels": 0,
+        "pivot": [
+          755,
+          774
+        ],
+        "bounds": [
+          569,
+          441,
+          439,
+          338
+        ]
+      },
+      {
+        "transparentPixels": 128055,
+        "edgePixels": 0,
+        "pivot": [
+          255,
+          1140
+        ],
+        "bounds": [
+          60,
+          849,
+          461,
+          293
+        ]
+      },
+      {
+        "transparentPixels": 110369,
+        "edgePixels": 0,
+        "pivot": [
+          780,
+          1140
+        ],
+        "bounds": [
+          559,
+          786,
+          345,
+          356
+        ]
+      },
+      {
+        "transparentPixels": 116867,
+        "edgePixels": 0,
+        "pivot": [
+          270,
+          1490
+        ],
+        "bounds": [
+          68,
+          1177,
+          387,
+          314
+        ]
+      },
+      {
+        "transparentPixels": 113661,
+        "edgePixels": 0,
+        "pivot": [
+          765,
+          1490
+        ],
+        "bounds": [
+          568,
+          1168,
+          399,
+          324
+        ]
+      }
+    ],
+    "scale": 0.285,
+    "resource": "Demons/HeavyAttackV2"
+  },
+  {
+    "name": "BossDashV2",
+    "frames": [
+      {
+        "transparentPixels": 154533,
+        "edgePixels": 0,
+        "pivot": [
+          295,
+          362.22222222222223
+        ],
+        "bounds": [
+          85,
+          50,
+          310,
+          330
+        ]
+      },
+      {
+        "transparentPixels": 160149,
+        "edgePixels": 0,
+        "pivot": [
+          783,
+          387.22222222222223
+        ],
+        "bounds": [
+          596,
+          67,
+          280,
+          319
+        ]
+      },
+      {
+        "transparentPixels": 125679,
+        "edgePixels": 0,
+        "pivot": [
+          315,
+          722.2222222222222
+        ],
+        "bounds": [
+          63,
+          447,
+          350,
+          290
+        ]
+      },
+      {
+        "transparentPixels": 127160,
+        "edgePixels": 0,
+        "pivot": [
+          810,
+          742.2222222222222
+        ],
+        "bounds": [
+          602,
+          468,
+          358,
+          247
+        ]
+      },
+      {
+        "transparentPixels": 137601,
+        "edgePixels": 0,
+        "pivot": [
+          300,
+          1112.2222222222222
+        ],
+        "bounds": [
+          73,
+          847,
+          392,
+          177
+        ]
+      },
+      {
+        "transparentPixels": 125902,
+        "edgePixels": 0,
+        "pivot": [
+          785,
+          1112.2222222222222
+        ],
+        "bounds": [
+          592,
+          788,
+          350,
+          334
+        ]
+      },
+      {
+        "transparentPixels": 146594,
+        "edgePixels": 0,
+        "pivot": [
+          290,
+          1472.2222222222222
+        ],
+        "bounds": [
+          80,
+          1142,
+          336,
+          336
+        ]
+      },
+      {
+        "transparentPixels": 145433,
+        "edgePixels": 0,
+        "pivot": [
+          790,
+          1472.2222222222222
+        ],
+        "bounds": [
+          594,
+          1145,
+          346,
+          335
+        ]
+      }
+    ],
+    "scale": 0.36,
+    "resource": "Demons/BossDashV2"
+  },
+  {
+    "name": "BossBoltsV2",
+    "frames": [
+      {
+        "transparentPixels": 147578,
+        "edgePixels": 0,
+        "pivot": [
+          305,
+          367.22222222222223
+        ],
+        "bounds": [
+          109,
+          49,
+          288,
+          320
+        ]
+      },
+      {
+        "transparentPixels": 149126,
+        "edgePixels": 0,
+        "pivot": [
+          805,
+          367.22222222222223
+        ],
+        "bounds": [
+          613,
+          49,
+          291,
+          320
+        ]
+      },
+      {
+        "transparentPixels": 125352,
+        "edgePixels": 0,
+        "pivot": [
+          305,
+          742.2222222222222
+        ],
+        "bounds": [
+          109,
+          414,
+          332,
+          319
+        ]
+      },
+      {
+        "transparentPixels": 121878,
+        "edgePixels": 0,
+        "pivot": [
+          805,
+          742.2222222222222
+        ],
+        "bounds": [
+          601,
+          412,
+          363,
+          325
+        ]
+      },
+      {
+        "transparentPixels": 127751,
+        "edgePixels": 0,
+        "pivot": [
+          300,
+          1112.2222222222222
+        ],
+        "bounds": [
+          98,
+          784,
+          351,
+          326
+        ]
+      },
+      {
+        "transparentPixels": 129139,
+        "edgePixels": 0,
+        "pivot": [
+          805,
+          1112.2222222222222
+        ],
+        "bounds": [
+          607,
+          785,
+          329,
+          325
+        ]
+      },
+      {
+        "transparentPixels": 142137,
+        "edgePixels": 0,
+        "pivot": [
+          300,
+          1482.2222222222222
+        ],
+        "bounds": [
+          107,
+          1160,
+          324,
+          330
+        ]
+      },
+      {
+        "transparentPixels": 148662,
+        "edgePixels": 0,
+        "pivot": [
+          805,
+          1482.2222222222222
+        ],
+        "bounds": [
+          609,
+          1164,
+          301,
+          327
+        ]
+      }
+    ],
+    "scale": 0.36,
+    "resource": "Demons/BossBoltsV2"
+  },
+  {
+    "name": "BossWaveV2",
+    "frames": [
+      {
+        "transparentPixels": 146946,
+        "edgePixels": 0,
+        "pivot": [
+          310,
+          382.22222222222223
+        ],
+        "bounds": [
+          89,
+          59,
+          329,
+          337
+        ]
+      },
+      {
+        "transparentPixels": 145652,
+        "edgePixels": 0,
+        "pivot": [
+          785,
+          382.22222222222223
+        ],
+        "bounds": [
+          545,
+          60,
+          356,
+          335
+        ]
+      },
+      {
+        "transparentPixels": 123317,
+        "edgePixels": 0,
+        "pivot": [
+          310,
+          737.2222222222222
+        ],
+        "bounds": [
+          99,
+          413,
+          335,
+          340
+        ]
+      },
+      {
+        "transparentPixels": 116854,
+        "edgePixels": 0,
+        "pivot": [
+          785,
+          742.2222222222222
+        ],
+        "bounds": [
+          578,
+          419,
+          349,
+          343
+        ]
+      },
+      {
+        "transparentPixels": 118778,
+        "edgePixels": 0,
+        "pivot": [
+          310,
+          1112.2222222222222
+        ],
+        "bounds": [
+          101,
+          783,
+          340,
+          343
+        ]
+      },
+      {
+        "transparentPixels": 113863,
+        "edgePixels": 0,
+        "pivot": [
+          785,
+          1112.2222222222222
+        ],
+        "bounds": [
+          557,
+          781,
+          385,
+          345
+        ]
+      },
+      {
+        "transparentPixels": 138584,
+        "edgePixels": 0,
+        "pivot": [
+          310,
+          1482.2222222222222
+        ],
+        "bounds": [
+          90,
+          1152,
+          342,
+          334
+        ]
+      },
+      {
+        "transparentPixels": 140773,
+        "edgePixels": 0,
+        "pivot": [
+          795,
+          1482.2222222222222
+        ],
+        "bounds": [
+          577,
+          1151,
+          348,
+          335
+        ]
+      }
+    ],
+    "scale": 0.36,
+    "resource": "Demons/BossWaveV2"
+  }
+]
