@@ -1,6 +1,6 @@
 # 프로젝트 상세 | 정회성
 
-[포트폴리오 홈](../README.md) · [게임 홈페이지](https://onecard-game.onrender.com) · [QA 모음](qa/README.md)
+[포트폴리오 홈](../README.md) · [게임 홈페이지](https://onecard-game.onrender.com) · [QA 모음](../qa/README.md)
 
 ## 한 수씩 배우는 쇼기 — 규칙을 대국 경험으로 연결하기
 
@@ -15,7 +15,7 @@
 
 **다음 검증:** 문제별 실패 원인, 불법 수 안내 이해도, 멀티플레이 재접속 흐름. AI 난이도를 공인 기력으로 환산하지 않습니다.
 
-[플레이](https://onecard-game.onrender.com/shogi/) · [구현 문서](../public/shogi/README.md) · [전략 데이터](../public/shogi/strategies-data.js)
+[플레이](https://onecard-game.onrender.com/shogi/) · [구현 문서](public/shogi/README.md) · [전략 데이터](public/shogi/strategies-data.js)
 
 ## 한 수씩 배우는 바둑 — 입문과 종국 합의 설계
 
@@ -30,7 +30,7 @@
 
 **다음 검증:** 사석 선택과 상대 동의 상태를 이용자가 이해하는지, 연속 접속 해제에서 상태가 유지되는지 확인합니다.
 
-[플레이](https://onecard-game.onrender.com/baduk/) · [규칙과 제한](../public/baduk/README.md) · [규칙 테스트](../tests/baduk.test.js)
+[플레이](https://onecard-game.onrender.com/baduk/) · [규칙과 제한](public/baduk/README.md) · [규칙 테스트](tests/baduk.test.js)
 
 ## 10년 뒤에 나를 찾아줘 — 기록과 기억의 차이를 읽는 서사
 
@@ -40,7 +40,7 @@
 
 **다음 검증:** 장면 전환의 맥락, 문서와 대사의 정보량, 저장·복원 이후 진행의 연속성.
 
-[플레이](https://onecard-game.onrender.com/unfinished/) · [기획서](05_아직_끝나지_않은_문장_기획서.md) · [전체 대본](05_10년뒤_전체대본.md) · [인물·미술 설정](05_인물_미술설정.md)
+[플레이](https://onecard-game.onrender.com/unfinished/) · [기획서](../05_아직_끝나지_않은_문장_기획서.md) · [전체 대본](../05_10년뒤_전체대본.md) · [인물·미술 설정](../05_인물_미술설정.md)
 
 ## 원카드 — 차례와 행동을 명확하게 전달하기
 
@@ -48,7 +48,7 @@
 
 카드 수 상시 표시, 현재 차례 강조, 7 카드 문양 선택 팝업과 원카드 선언 기회를 개선 요구로 다뤘습니다. 규칙 적용과 화면 피드백을 함께 검토한 사례입니다.
 
-[플레이](https://onecard-game.onrender.com/onecard/) · [규칙 구현](../gameEngine.js) · [QA 사례](qa/web-games-qa.md)
+[플레이](https://onecard-game.onrender.com/onecard/) · [규칙 구현](gameEngine.js) · [QA 사례](../qa/web-games-qa.md)
 
 ## 핵전쟁 서바이벌 — 회피와 생존 기록
 
@@ -56,7 +56,7 @@ Canvas 기반 이동·전투와 생존 시간 기록을 중심으로 구성했�
 
 **다음 검증:** 적과 피격의 가독성, 초반 위협 증가 속도, 재시작 동선.
 
-[플레이](https://onecard-game.onrender.com/survival/) · [소스](../public/survival/)
+[플레이](https://onecard-game.onrender.com/survival/) · [소스](public/survival/)
 
 ## 대한민국 생태계교란종 잡기 — 수집 목표와 학습 동기
 
@@ -64,7 +64,7 @@ Canvas 기반 이동·전투와 생존 시간 기록을 중심으로 구성했�
 
 **다음 검증:** 포획 조건의 이해도, 전투와 도감 정보의 연결, 반복 플레이 중 목표 전달.
 
-[플레이](https://onecard-game.onrender.com/ecodex/) · [소스](../public/ecodex/)
+[플레이](https://onecard-game.onrender.com/ecodex/) · [소스](public/ecodex/)
 
 ## 역할과 자료 기준
 

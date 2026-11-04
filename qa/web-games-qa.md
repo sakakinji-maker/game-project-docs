@@ -1,10 +1,10 @@
 # 웹게임 QA | 규칙·화면·멀티플레이
 
-[포트폴리오 홈](../../README.md) · [QA 모음](README.md) · [프로젝트 상세](../portfolio.md)
+[포트폴리오 홈](../README.md) · [QA 모음](README.md) · [프로젝트 상세](../web-games/PROJECTS.md)
 
 ## 원카드 개선 기록
 
-원카드 개발 과정에서 남긴 [QA 원본 문서](../QA정리.docx)를 기준으로, 규칙과 플레이어에게 전달되는 정보의 문제를 정리했습니다.
+원카드 개발 과정에서 남긴 [QA 원본 문서](onecard-qa.docx)를 기준으로, 규칙과 플레이어에게 전달되는 정보의 문제를 정리했습니다.
 
 | 검토 주제 | 다룬 개선 | 재검증할 상황 |
 | --- | --- | --- |
@@ -20,12 +20,12 @@
 
 | 대상 | 확인 범위 | 테스트 자료 |
 | --- | --- | --- |
-| 쇼기 | 규칙·연습·전략 콘텐츠 | [기본 규칙](../../tests/shogi.test.js) · [연습](../../tests/shogi-practice.test.js) · [전략](../../tests/shogi-strategies.test.js) |
-| 쇼기 온라인 대국 | 서버 흐름·화면 동작 | [멀티플레이](../../tests/shogi-multiplayer.test.js) · [멀티플레이 UI](../../tests/shogi-multiplayer-ui.test.js) |
-| 바둑 | 규칙·화면·멀티플레이 | [규칙](../../tests/baduk.test.js) · [UI](../../tests/baduk-ui.test.js) · [멀티플레이](../../tests/baduk-multiplayer.test.js) |
-| 서사 게임 | 장면·저장·리소스 관련 검증 | [테스트 파일](../../tests/unfinished.test.js) |
+| 쇼기 | 규칙·연습·전략 콘텐츠 | [기본 규칙](../web-games/tests/shogi.test.js) · [연습](../web-games/tests/shogi-practice.test.js) · [전략](../web-games/tests/shogi-strategies.test.js) |
+| 쇼기 온라인 대국 | 서버 흐름·화면 동작 | [멀티플레이](../web-games/tests/shogi-multiplayer.test.js) · [멀티플레이 UI](../web-games/tests/shogi-multiplayer-ui.test.js) |
+| 바둑 | 규칙·화면·멀티플레이 | [규칙](../web-games/tests/baduk.test.js) · [UI](../web-games/tests/baduk-ui.test.js) · [멀티플레이](../web-games/tests/baduk-multiplayer.test.js) |
+| 서사 게임 | 장면·저장·리소스 관련 검증 | [테스트 파일](../web-games/tests/unfinished.test.js) |
 
-실행: 저장소 루트에서 `npm ci` 후 `npm test`.
+실행: `web-games` 폴더에서 `npm ci` 후 `npm test`.
 
 테스트 파일의 존재와 실제 실행 결과는 구분합니다. 검증할 때 실행 커밋, 환경, 결과와 실패 로그를 함께 기록합니다. 이 문서에는 새로 측정하지 않은 통과율이나 결함 해결률을 기재하지 않습니다.
 

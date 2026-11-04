@@ -2,6 +2,7 @@ services:
   - type: web
     name: onecard-game
     env: node
+    rootDir: web-games
     plan: free
     buildCommand: npm install
     startCommand: node server.js
