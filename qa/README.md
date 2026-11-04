@@ -2,6 +2,13 @@
 
 [포트폴리오 홈](../README.md) · [프로젝트 상세](../web-games/PROJECTS.md)
 
+## 게임하면서 찾은 버그들
+
+출시된 게임을 플레이하다 발견한 버그를 QA 리포트 형식으로 기록합니다.
+
+- [버그 목록](game-bug-reports/README.md)
+- [001 쿠키런: 킹덤 — 퀘스트 보상 수령 후 오류 반복](game-bug-reports/001-cookierun-kingdom-quest-reward-error.md)
+
 ## SUNFALL (Unity)
 
 PC 기준 테스트 케이스 14개, 결함 리포트 3건, 회귀 테스트, 장비 밸런스 분석을 정리했습니다. 모바일은 아직 대응하지 않았습니다.
