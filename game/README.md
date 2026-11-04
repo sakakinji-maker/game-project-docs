@@ -5,7 +5,7 @@
 [정리된 게임 문서](../sunfall/README.md) · Unity **6000.3.27f1**
 
 이 폴더에는 실제 편집 가능한 게임 소스·씬·이미지·프로젝트 설정이 들어 있습니다.
-Windows 실행 파일(EXE) 배포본이 아니라 Unity 프로젝트입니다.
+이 폴더는 Unity 소스 프로젝트입니다. **[Windows QA 실행 파일 다운로드](https://github.com/sakakinji-maker/game-project-docs/releases/download/sunfall-qa-2026.11.05-1/SUNFALL-Windows-x64-QA-2026.11.05-1.zip)** · [Release](https://github.com/sakakinji-maker/game-project-docs/releases/tag/sunfall-qa-2026.11.05-1) · [실행·QA 안내](WINDOWS_QA.md). 실행 파일과 데이터는 Release ZIP으로 별도 배포합니다.
 
 ## 여는 방법
 

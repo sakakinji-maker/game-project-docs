@@ -64,7 +64,7 @@
 - **회귀 테스트:** 결함 수정마다 테스트 추가 (EditMode 10개 파일 · 99개 메서드)
 - **밸런스:** 장검 보너스 +10% → +30%로 중갑병 처치 타수 4타 → 3타
 
-[SUNFALL QA 문서](qa/sunfall-qa.md) · [게임 문서](sunfall/README.md) · [Unity 프로젝트](game/README.md)
+[SUNFALL QA 문서](qa/sunfall-qa.md) · [게임 문서](sunfall/README.md) · [Unity 프로젝트](game/README.md) · [Windows QA 다운로드](https://github.com/sakakinji-maker/game-project-docs/releases/tag/sunfall-qa-2026.11.05-1)
 
 ## 제작 프로젝트
 

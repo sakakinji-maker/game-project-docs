@@ -57,6 +57,6 @@ Skul은 넓은 횡스크롤 방과 액션 흐름의 참고작입니다. 게임�
 - 2스테이지 전투방 3개·보스방과 봉인 구조물을 1스테이지 스타일로 재제작.
 - F1~F7 개발자 이동과 F8 미구현 안내 적용.
 
-이 폴더는 **문서 스냅샷**입니다. 실제 Unity 소스·씬·이미지·설정은 [game/Sunfall](../game/Sunfall/)에, 여는 방법은 [게임 실행 안내](../game/README.md)에 있습니다. 개인 저장 데이터와 EXE 배포본은 포함하지 않습니다. 문서의 `Assets/...` 경로는 해당 Unity 프로젝트 기준입니다. `Temp/...`는 캐시 제외로 업로드되지 않습니다.
+이 폴더는 **문서 스냅샷**입니다. 실제 Unity 소스·씬·이미지·설정은 [game/Sunfall](../game/Sunfall/)에, 여는 방법은 [게임 실행 안내](../game/README.md)에 있습니다. 개인 저장 데이터는 포함하지 않습니다. EXE 배포본은 [Windows QA Release](https://github.com/sakakinji-maker/game-project-docs/releases/tag/sunfall-qa-2026.11.05-1)에서 별도로 받습니다. 문서의 `Assets/...` 경로는 해당 Unity 프로젝트 기준입니다. `Temp/...`는 캐시 제외로 업로드되지 않습니다.
 
 추가 개선: 2스테이지 네 방은 각각 2172×724 배경 한 장을 사용하며, 1스테이지와 같은 표시 배율로 연결했습니다. [해상도 개선 기록](../game/Sunfall/docs/STAGE2_HD_BACKGROUNDS.md)
