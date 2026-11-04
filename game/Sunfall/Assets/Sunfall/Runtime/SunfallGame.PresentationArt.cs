@@ -22,12 +22,12 @@ namespace Sunfall
         }
         // Normalized cell UVs survive Unity's platform texture resizing. Insets
         // isolate faint edge glow from neighbouring cells without touching files.
-        static void DrawAtlasCell(Texture2D texture,Rect rect,int cell,int columns,int rows)
+        void DrawAtlasCell(Texture2D texture,Rect rect,int cell,int columns,int rows)
         {
             const float inset=.012f;
             var uv=new Rect((cell%columns+inset)/columns,1-(cell/columns+1-inset)/rows,
                 (1-2*inset)/columns,(1-2*inset)/rows);
-            GUI.DrawTextureWithTexCoords(rect,texture,uv,true);
+            DrawArtwork(texture,rect,uv);
         }
         void DrawSpellEffect(SpellKind spell,Vector2 center,Vector2 size,float alpha=1,float angle=0,int facing=1)
         {
@@ -36,12 +36,16 @@ namespace Sunfall
         void DrawSpellEffectCell(int cell,Vector2 center,Vector2 size,float alpha=1,float angle=0,int facing=1)
         {
             EnsurePresentationArt();if(playerSpellSheet==null)return;
-            var matrix=GUI.matrix;var color=GUI.color;var pivot=new Vector3(center.x,center.y,0);
-            GUI.matrix=matrix*Matrix4x4.Translate(pivot)*Matrix4x4.Rotate(Quaternion.Euler(0,0,angle))*
-                Matrix4x4.Scale(new Vector3(facing<0?-1:1,1,1))*Matrix4x4.Translate(-pivot);
-            GUI.color=new Color(1,1,1,Mathf.Clamp01(alpha));
-            DrawAtlasCell(playerSpellSheet,new Rect(center-size*.5f,size),cell,4,4);
-            GUI.color=color;GUI.matrix=matrix;
+            var color=GUI.color;
+            using(ArtworkAt(center,angle,facing))
+            {
+                try
+                {
+                    GUI.color=new Color(1,1,1,Mathf.Clamp01(alpha));
+                    DrawAtlasCell(playerSpellSheet,new Rect(-size*.5f,size),cell,4,4);
+                }
+                finally {GUI.color=color;}
+            }
         }
         bool DrawEquipmentImage(EquipmentId id,Vector2 center,Color tint)
         {
@@ -84,7 +88,14 @@ namespace Sunfall
             float scale=Mathf.Min((rect.width-16)/frame.Source.width,(rect.height-24)/frame.Source.height);
             var origin=rect.center-new Vector2(frame.Source.width,frame.Source.height)*scale*.5f;
             var color=GUI.color;GUI.color=Color.white;
-            DrawHeroRegion(texture,sourceSize,frame.Source,origin,scale);GUI.color=color;
+            DrawHeroRegion(texture,sourceSize,frame.Source,origin,scale);
+            if(chapter==5)
+            {
+                EnsureMirrorArt();
+                int mask=expression==StoryExpression.Angry?1:expression==StoryExpression.Pained||expression==StoryExpression.Resigned?2:0;
+                DrawLysseaMaskPart(mask,origin+(LysseaFaceCenters[0]-frame.Source.position)*scale,49*scale,Color.white);
+            }
+            GUI.color=color;
         }
     }
 }

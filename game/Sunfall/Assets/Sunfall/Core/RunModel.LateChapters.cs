@@ -66,7 +66,13 @@ namespace Sunfall.Core
             if(RoomIndex==2)AddEnemy(32,0,EnemyKind.Melee,29,35);
             // Different room paths within each chapter, with supported guards.
             if(RoomIndex==1)Platforms.Add(new Platform(26,12,1.6f));
-            if(RoomIndex==2){Platforms.Add(new Platform(3,7,1.6f));Platforms.Add(new Platform(54,7,1.6f));}
+            if(RoomIndex==2)
+            {
+                Platforms.Add(new Platform(3,7,1.6f));
+                // The mirror chapel already has a landing ending at x56.
+                // Keep x56..ExitX clear so the player can descend to the portal.
+                if(Chapter!=5)Platforms.Add(new Platform(54,7,1.6f));
+            }
         }
         void UpdateLateBoss(Enemy boss,float dt)
         {

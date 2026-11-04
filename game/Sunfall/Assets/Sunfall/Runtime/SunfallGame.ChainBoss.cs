@@ -26,8 +26,8 @@ namespace Sunfall
             if(boss.Hp<=0&&boss.DeathTimer<=0)return;
             if(chainBossSheet==null&&Time.realtimeSinceStartup>=nextChainBossRetry)LoadChainBossArt();
             var p=RenderPosition(boss,boss.X,boss.Y);float x=SX(p.x),y=SY(p.y);
-            if(x<-230||x>1510)return;
             DrawChainBossTelegraph(boss,x,y);
+            if(x<-230||x>1510)return;
             float reveal=run.BossIntroducing?Mathf.SmoothStep(0,1,Mathf.Clamp01((BossIntroElapsed-MorgaChainBreakTime)/.75f)):1;
             if(run.BossIntroducing)y-=(1-reveal)*55;
             float alpha=(boss.Hp<=0?Mathf.Clamp01(1-BossDefeatElapsed/1.4f):1)*reveal;
@@ -53,7 +53,7 @@ namespace Sunfall
             if(boss.PhaseTransition>0)
             {
                 Text("2페이즈 · 왕실의 속박",x-180,y-179,360,34,22,hot,TextAnchor.MiddleCenter);
-                for(int i=0;i<8;i++){float a=i*Mathf.PI/4;GothicDiamond(x+Mathf.Cos(a)*70,y-68+Mathf.Sin(a)*60,5,hot);}
+                DrawBossRitual(2,new Vector2(x,y-68),Vector2.one*145,hot,visualClock*22);
                 return;
             }
             bool warning=boss.Windup>0,active=boss.AttackPose>0;
@@ -63,13 +63,13 @@ namespace Sunfall
             if(boss.Pattern==BossPattern.ChainSlam)
             {
                 float left=SX(boss.AimX-boss.ChainSlamHalfWidth),width=boss.ChainSlamHalfWidth*68,ground=SY(0);
-                Box(new Rect(left,ground-41,width,41),new Color(hot.r,hot.g,hot.b,warning?.14f:.32f*amount));
+                if(warning)DrawBossRune(SX(boss.AimX),ground,width,amount,hot);
                 Box(new Rect(left,ground-4,width,4),new Color(hot.r,hot.g,hot.b,.7f));
                 if(warning)Box(new Rect(left,ground-7,width*amount,3),hot);
                 else
                 {
-                    DrawChainLinks(new Vector2(x+boss.Facing*25,y-75),new Vector2(SX(boss.AimX),ground-12),hot,12);
-                    GothicDiamond(SX(boss.AimX),ground-16,17,hot);
+                    DrawBossChain(new Vector2(x+boss.Facing*25,y-75),new Vector2(SX(boss.AimX),ground-12),Mathf.Clamp01(amount*4),18*(1-amount),0,true);
+                    DrawBossImpact(new Vector2(SX(boss.AimX),ground-8),width,amount,hot);
                 }
                 label="사슬 내려치기 · 점프 / 발판";
             }
@@ -85,32 +85,29 @@ namespace Sunfall
         {
             float x=SX(worldX),top=SY(RoyalChain.Height),bottom=SY(0),width=halfWidth*68;
             if(x+width<0||x-width>1280)return;
-            Box(new Rect(x-width*.5f,top,width,bottom-top),new Color(color.r,color.g,color.b,warning?.08f:.24f));
             if(warning)
             {
-                Box(new Rect(x-width*.5f,bottom-6,width,6),color);
-                Box(new Rect(x-width*.5f,bottom-10,width*Mathf.Clamp01(progress),3),color);
-                for(float y=top;y<bottom;y+=22){Box(new Rect(x-width*.5f,y,2,8),color);Box(new Rect(x+width*.5f-2,y,2,8),color);}
+                DrawBossColumnWarning(x,top,bottom,width,progress,color);
+                // The suspended hook travels down during anticipation and meets
+                // the floor at release, matching the existing instant hit timing.
+                float tip=Mathf.Lerp(top, bottom-22,Mathf.Clamp01(progress));
+                DrawBossChain(new Vector2(x,top-25),new Vector2(x,tip),.3f+.4f*progress,5*(1-progress),worldX,true);
             }
             else
             {
-                DrawChainLinks(new Vector2(x,top),new Vector2(x,bottom),color,25);
-                GothicDiamond(x,bottom-10,12,color);
+                float alpha=Mathf.Clamp01(progress*4);
+                DrawBossChain(new Vector2(x,top),new Vector2(x,bottom-10),alpha,7*(1-progress),worldX,true);
+                DrawBossImpact(new Vector2(x,bottom-8),width*1.8f,progress,color);
             }
         }
         void DrawChainLinks(Vector2 from,Vector2 to,Color color,int count)
         {
-            GothicLine(from,to,new Color(.04f,.035f,.05f,color.a),6);
-            for(int i=0;i<=count;i++)
-            {
-                Vector2 p=Vector2.Lerp(from,to,i/(float)count);
-                GothicDiamond(p.x,p.y,5,color);GothicDiamond(p.x,p.y,2,new Color(.06f,.04f,.07f,color.a));
-            }
+            DrawBossChain(from,to,color.a,4,0,false);
         }
         void DrawRoyalChainHazards()
         {
             foreach(var chain in run.RoyalChains)
-                DrawChainColumn(chain.X,RoyalChain.HalfWidth,chain.Delay>0,chain.Delay>0?1-chain.Delay/1.2f:1,new Color(1,.32f,.25f));
+                DrawChainColumn(chain.X,RoyalChain.HalfWidth,chain.Delay>0,chain.Delay>0?1-chain.Delay/1.2f:chain.Active/.28f,new Color(1,.32f,.25f));
             if(run.SnareTimer>0)
             {
                 Vector2 feet=new Vector2(SX(run.X),SY(run.Y));

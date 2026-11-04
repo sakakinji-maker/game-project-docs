@@ -5,8 +5,8 @@ namespace Sunfall
     public sealed partial class SunfallGame
     {
         static readonly string[] BossPortraitAssets={
-            "RedWingExpressionsV1","MorgaHuskExpressionsV2","AurelExpressionsV1","VarkanExpressionsV1",
-            "LysseaExpressionsV1","NoctisExpressionsV1","SolveinExpressionsV1"
+            "RedWingExpressionsV1","MorgaHuskExpressionsV2","AurelEclipseExpressionsV2","VarkanKnightExpressionsV2",
+            "LysseaMaskExpressionsV2","NoctisRavenExpressionsV2","SolveinThornExpressionsV2"
         };
         readonly Texture2D[] bossPortraitSheets=new Texture2D[7];
         float nextBossPortraitRetry;

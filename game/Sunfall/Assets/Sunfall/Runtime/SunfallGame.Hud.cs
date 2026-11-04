@@ -231,9 +231,16 @@ namespace Sunfall
         }
         void GothicLine(Vector2 from,Vector2 to,Color color,float thickness)
         {
-            var old=GUI.matrix;var delta=to-from;
-            GUI.matrix=old*Matrix4x4.TRS(new Vector3(from.x,from.y,0),Quaternion.Euler(0,0,Mathf.Atan2(delta.y,delta.x)*Mathf.Rad2Deg),Vector3.one);
-            Box(new Rect(0,-thickness*.5f,delta.magnitude,thickness),color);GUI.matrix=old;
+            var delta=to-from;var previous=GUI.color;
+            using(ArtworkAt((from+to)*.5f,Mathf.Atan2(delta.y,delta.x)*Mathf.Rad2Deg))
+            {
+                try
+                {
+                    GUI.color=color;
+                    DrawArtwork(white,new Rect(-delta.magnitude*.5f,-thickness*.5f,delta.magnitude,thickness),new Rect(0,0,1,1));
+                }
+                finally {GUI.color=previous;}
+            }
         }
         void GothicPolygon(Color color,params Vector2[] points)
         {

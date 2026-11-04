@@ -21,6 +21,7 @@ namespace Sunfall
         static readonly float[] BossScales={.22f,.22f,.22f,.22f};
         void LoadBossArt()
         {
+            EnsureBossEffectArt();
             LoadLateBossArt();LoadSolarBossArt();LoadChainBossArt();
             foreach(var clip in bossAttackClips)clip.Load();
             stage1BossSheet=Resources.Load<Texture2D>("Demons/Stage1BossFlight");
@@ -50,13 +51,7 @@ namespace Sunfall
                 float remaining=boss.AttackPose/RunModel.BossReleaseDuration;
                 float start=SX(boss.X-boss.AttackReach),width=boss.AttackReach*68;
                 float groundY=SY(0);
-                Box(new Rect(start,groundY-13,width,13),new Color(.95f,.12f,.3f,remaining*.65f));
-                for(int side=-1;side<=1;side+=2)
-                {
-                    float waveX=x+side*(1-remaining)*boss.AttackReach*34;
-                    Box(new Rect(waveX-9,groundY-24,18,24),new Color(1,.3f,.45f,remaining));
-                    Box(new Rect(waveX-3,groundY-19,6,19),new Color(1,.8f,.85f,remaining));
-                }
+                DrawBossGroundBurst(start,width,groundY,24,remaining,crimson);
             }
             int pose=boss.PhaseTransition>0?2:boss.DashRemaining>0?3:boss.Windup>0||boss.AttackPose>0?2:(int)(boss.AnimationTime*4)%2;
             if(run.BossIntroducing&&BossIntroElapsed<1.8f)pose=2;
@@ -88,14 +83,15 @@ namespace Sunfall
                 for(int i=0;i<32;i++)
                 {
                     float angle=i*Mathf.PI/16;
-                    Box(new Rect(x+Mathf.Cos(angle)*radius-2,feetY-50+Mathf.Sin(angle)*radius-2,4,4),crimson);
+                    DrawBossRitual(3,new Vector2(x+Mathf.Cos(angle)*radius,feetY-50+Mathf.Sin(angle)*radius),Vector2.one*12,crimson);
                 }
                 Text("2페이즈 · 붉은 각성",x-130,feetY-165,260,32,21,new Color(1,.65f,.73f),TextAnchor.MiddleCenter);
                 return;
             }
             if(boss.DashRemaining>0)
             {
-                for(int i=1;i<=4;i++)Box(new Rect(x-boss.Facing*i*18-12,feetY-78+i*6,24,44),new Color(.95f,.1f,.27f,.32f/i));
+                for(int i=1;i<=4;i++)
+                    DrawSpellEffect(SpellKind.EmberWave,new Vector2(x-boss.Facing*i*18,feetY-55),new Vector2(44,33),.4f/i,0,boss.Facing);
             }
             if(boss.Windup<=0)return;
             float progress=1-Mathf.Clamp01(boss.Windup/boss.WindupDuration);
@@ -142,11 +138,7 @@ namespace Sunfall
             {
                 var position=RenderPosition(orb,orb.X,orb.Y);float x=SX(position.x),y=SY(position.y);
                 if(x<-30||x>1310||y<120||y>600)continue;
-                var direction=new Vector2(orb.VelocityX,-orb.VelocityY).normalized;
-                Color tint=orb.Owner.LateChapter>0?LateColor(orb.Owner.LateChapter):new Color(.95f,.12f,.32f);
-                for(int i=3;i>0;i--)Box(new Rect(x-direction.x*i*6-4,y-direction.y*i*6-4,8,8),new Color(tint.r,tint.g,tint.b,.3f/i));
-                GothicDiamond(x,y,9,tint);
-                GothicDiamond(x,y,4,new Color(1,.94f,.9f));
+                DrawBossMagicOrb(orb,new Vector2(x,y));
             }
         }
         void DrawBossHud()

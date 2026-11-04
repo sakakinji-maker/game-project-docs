@@ -8,14 +8,14 @@ namespace Sunfall
         Texture2D solarBossSheet;
         float nextSolarBossRetry;
         static readonly HeroFrame[] SolarBossFrames={
-            new HeroFrame(0,0,444,443,255,407),new HeroFrame(444,0,443,443,692,407),
-            new HeroFrame(887,0,444,443,1123,407),new HeroFrame(1331,0,443,443,1565,407),
-            new HeroFrame(0,443,444,444,282,810),new HeroFrame(444,443,443,444,690,810),
-            new HeroFrame(887,443,444,444,1138,810),new HeroFrame(1331,443,443,444,1574,810)
+            new HeroFrame(0,0,444,444,249,404),new HeroFrame(444,0,443,444,690,404),
+            new HeroFrame(887,0,443,444,1135,404),new HeroFrame(1330,0,444,444,1577,405),
+            new HeroFrame(0,444,444,443,255,846),new HeroFrame(444,444,490,443,690,846),
+            new HeroFrame(960,444,370,443,1126,846),new HeroFrame(1330,444,444,443,1572,846)
         };
         void LoadSolarBossArt()
         {
-            solarBossSheet=Resources.Load<Texture2D>("Demons/Stage3SolarRegentV1");
+            solarBossSheet=Resources.Load<Texture2D>("Demons/Stage3AurelEclipseV2");
             if(solarBossSheet!=null){solarBossSheet.filterMode=FilterMode.Point;solarBossSheet.wrapMode=TextureWrapMode.Clamp;}
             nextSolarBossRetry=Time.realtimeSinceStartup+1;
         }
@@ -32,7 +32,6 @@ namespace Sunfall
             int pose=boss.PhaseTransition>0?7:boss.Windup>0?(boss.Pattern==BossPattern.SolarSweep?4:boss.Pattern==BossPattern.SolarLances?6:7):
                 boss.AttackPose>0?(boss.Pattern==BossPattern.SolarSweep?5:boss.Pattern==BossPattern.SolarLances?6:7):boss.Walking?2+(int)(boss.AnimationTime*6)%2:(int)(boss.AnimationTime*2)%2;
             var texture=solarBossSheet;var frame=SolarBossFrames[pose];float scale=.42f;
-            if(texture==null){texture=chainBossSheet;frame=ChainBossFrames[pose];scale=.36f;}
             if(texture==null)return;
             var matrix=GUI.matrix;var color=GUI.color;var pivot=new Vector3(x,y,0);
             GUI.matrix=matrix*Matrix4x4.Translate(pivot)*Matrix4x4.Scale(new Vector3(boss.Facing,1,1))*Matrix4x4.Translate(-pivot);
@@ -54,14 +53,12 @@ namespace Sunfall
             if(boss.Pattern==BossPattern.SolarSweep)
             {
                 float left=SX(boss.X-boss.SolarSweepReach),width=boss.SolarSweepReach*68;
-                Box(new Rect(left,ground-41,width,41),new Color(gold.r,gold.g,gold.b,warning?.12f:.45f*progress));
-                Box(new Rect(left,ground-5,width,5),gold);
-                if(warning)Box(new Rect(left,ground-9,width*progress,3),gold);
-                else for(int side=-1;side<=1;side+=2)
+                if(warning)
                 {
-                    float x=SX(boss.X)+side*(1-progress)*boss.SolarSweepReach*34;
-                    GothicPolygon(gold,new Vector2(x-20,ground),new Vector2(x,ground-39),new Vector2(x+20,ground));
+                    DrawBossRune(SX(boss.X),ground,width,progress,gold);
+                    Box(new Rect(left,ground-5,width,3),new Color(gold.r,gold.g,gold.b,.55f));
                 }
+                else DrawBossGroundBurst(left,width,ground,41,progress,gold);
                 label="태양 베기 · 점프 / 발판으로";
             }
             else if(boss.Pattern==BossPattern.SolarLances)
@@ -69,17 +66,11 @@ namespace Sunfall
                 for(int i=0;i<boss.SolarLanceCount;i++)
                 {
                     float x=SX(boss.SolarLanceX(i)),top=SY(9),width=.7f*68;
-                    Box(new Rect(x-width/2,top,width,ground-top),new Color(gold.r,gold.g,gold.b,warning?.09f:.35f*progress));
-                    Box(new Rect(x-width/2,ground-6,width,6),gold);
-                    if(warning)
-                    {
-                        for(float y=top;y<ground;y+=24){Box(new Rect(x-width/2,y,2,9),gold);Box(new Rect(x+width/2-2,y,2,9),gold);}
-                        Box(new Rect(x-width/2,ground-10,width*progress,3),gold);
-                    }
+                    if(warning)DrawBossColumnWarning(x,top,ground,width,progress,gold);
                     else
                     {
-                        GothicLine(new Vector2(x,top),new Vector2(x,ground-20),gold,5);
-                        GothicPolygon(gold,new Vector2(x-17,ground-29),new Vector2(x,ground),new Vector2(x+17,ground-29));
+                        DrawBossPillar(x,top,ground,width,progress,gold,i*1.7f);
+                        DrawBossImpact(new Vector2(x,ground-5),width*1.7f,progress,gold);
                     }
                 }
                 label="왕실 광창 · 표시된 기둥 사이로";
@@ -89,7 +80,8 @@ namespace Sunfall
                 float left=SX(boss.AimX-boss.EclipseSafeRadius),right=SX(boss.AimX+boss.EclipseSafeRadius),top=SY(10);
                 float a=Mathf.Clamp(left,0,1280),b=Mathf.Clamp(right,0,1280);
                 Color danger=new Color(.85f,.13f,.18f,warning?.13f:.45f*progress),safe=new Color(.52f,1,.8f);
-                Box(new Rect(0,top,a,ground-top),danger);Box(new Rect(b,top,1280-b,ground-top),danger);
+                if(warning){Box(new Rect(0,top,a,ground-top),danger);Box(new Rect(b,top,1280-b,ground-top),danger);}
+                else {DrawBossCurtain(0,a,top,ground,progress,gold);DrawBossCurtain(b,1280,top,ground,progress,gold);}
                 Box(new Rect(left,top,right-left,ground-top),new Color(safe.r,safe.g,safe.b,.1f));
                 Box(new Rect(left,top,3,ground-top),safe);Box(new Rect(right-3,top,3,ground-top),safe);
                 Box(new Rect(left,ground-6,right-left,6),safe);
@@ -103,13 +95,17 @@ namespace Sunfall
         void DrawSolarSeal()
         {
             if(run.Chapter!=3||run.Stage!=RunStage.BossArena)return;
-            float x=SX(32),y=SY(7),opening=run.BossDefeated?Mathf.Clamp01((BossDefeatElapsed-.55f)/1.3f):0;
-            GothicDisc(x,y,85,new Color(.48f+opening*.35f,.33f+opening*.3f,.16f));
-            GothicDisc(x,y,73,new Color(.04f+opening*.65f,.03f+opening*.41f,.065f+opening*.12f));
-            for(int side=-1;side<=1;side+=2)
+            // Pin the seal animation to the astrolabe in the panorama rather
+            // than to world-space stone blocks or the moving boss.
+            float x=CathedralBackdropWidth*.5f-CathedralBackdropOffset;
+            float y=CathedralBackdropTop+230f*(CathedralBackdropWidth/2172)+cameraY*8;
+            float opening=run.BossDefeated?Mathf.Clamp01((BossDefeatElapsed-.55f)/1.3f):0;
+            if(opening<1)
             {
-                var color=new Color(.56f,.42f,.25f,1-opening);
-                DrawChainLinks(new Vector2(x+side*(125+opening*60),y-90),new Vector2(x-side*70,y+80+opening*100),color,18);
+                EnsurePresentationArt();
+                for(int side=-1;side<=1;side+=2)
+                    DrawAnimatedChain(new Vector2(x+side*145,y-95),
+                        new Vector2(x-side*110,y+90+opening*70),1-opening,3,side*.3f,false);
             }
             if(opening>0)
             {

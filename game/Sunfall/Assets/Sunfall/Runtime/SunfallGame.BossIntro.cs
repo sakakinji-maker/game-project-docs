@@ -9,6 +9,9 @@ namespace Sunfall
         void DrawBossArrivalEffect()
         {
             if(run.Chapter==2){DrawMorgaArrivalEffect();return;}
+            if(run.Chapter==5){DrawLysseaArrivalEffect();return;}
+            if(run.Chapter==6){DrawNoctisArrivalEffect();return;}
+            if(run.Chapter==7){DrawSolveinArrivalEffect();return;}
             float time=BossIntroElapsed;
             float envelope=Mathf.Clamp01(time/.4f)*Mathf.Clamp01((RunModel.BossIntroDuration-time-.45f)/.65f);
             float x=SX(RunModel.BossSpawnX),y=SY(0)-5;
@@ -49,7 +52,7 @@ namespace Sunfall
             GothicDiamond(640,590,6,gold);
             Text(run.Chapter>=4?"제"+run.Chapter+"장 · "+RoomTitle:run.Chapter==3?"제3장 · 태양 봉인의 내전":run.Chapter==2?"제2장 · 왕실 사슬의 제단":"제1장 · 공중 성소",340,70,600,35,20,gold,TextAnchor.MiddleCenter);
             Text(BossTitle,280,607,720,48,36,new Color(1,.81f,.84f,fade),TextAnchor.MiddleCenter);
-            Text(run.Chapter>=4?"어머니에게 이어진 별실을 지키는 마지막 수문장":run.Chapter==3?"어머니를 봉인의 매듭으로 삼은 왕실의 악마":run.Chapter==2?"양어머니의 별실을 붙잡은 왕실의 집행자":"어머니의 별실을 삼킨 균열의 간수",340,660,600,28,18,new Color(.68f,.65f,.7f,fade),TextAnchor.MiddleCenter);
+            Text(run.Chapter==7?"가시 왕좌에서 일어난 왕, 그의 검 끝에 마지막 별실이 묶여 있다":run.Chapter==6?"종소리가 멎은 성소에, 왕의 밤을 두른 날개가 내려온다":run.Chapter==5?"깨진 거울 너머, 세 개의 탈이 어머니의 기억을 지킨다":run.Chapter>=4?"어머니에게 이어진 별실을 지키는 마지막 수문장":run.Chapter==3?"어머니를 봉인의 매듭으로 삼은 왕실의 악마":run.Chapter==2?"양어머니의 별실을 붙잡은 왕실의 집행자":"어머니의 별실을 삼킨 균열의 간수",340,660,600,28,18,new Color(.68f,.65f,.7f,fade),TextAnchor.MiddleCenter);
         }
     }
 }

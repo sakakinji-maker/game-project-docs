@@ -10,11 +10,11 @@ namespace Sunfall
         static readonly string[] RoomTitles={"숲 입구","무너진 정원","악마 주둔지","공중 보스 성소"};
         static readonly string[] ChapterTwoTitles={"잿빛 성문","쇠사슬 회랑","검은 성채","왕실 사슬의 제단"};
         static readonly string[] ChapterThreeTitles={"대성당 진입로","왕실 회랑","태양 봉인 예배당","태양 봉인의 내전"};
-        static readonly string[] ChapterFourTitles={"왕관의 외벽","역광의 도관","심장 봉인실","왕관의 심장 제단"};
+        static readonly string[] ChapterFourTitles={"대성당 뒤편 요새길","역광의 왕실 회랑","심장 봉인 회랑","왕관의 결투장"};
         static readonly string[][] ChapterFourLandmarks={
-            new[]{"아우렐의 봉인 너머","왕관의 내부 수비대","역광의 도관으로"},
-            new[]{"거꾸로 흐르는 태양빛","별실이 지나는 도관","심장 봉인실로"},
-            new[]{"어머니가 버티는 마지막 매듭","왕관의 심장","심장지기의 제단으로"},
+            new[]{"대성당에서 이어진 다리","왕관의 내부 수비대","왕실 회랑으로"},
+            new[]{"거꾸로 흐르는 태양빛","별실이 지나는 회랑","심장 봉인 회랑으로"},
+            new[]{"어머니가 버티는 마지막 매듭","왕관의 심장","심장지기의 결투장으로"},
             new[]{"멈추지 않는 왕의 명령","바르칸의 심장 장치","거울 성역으로"}
         };
         static readonly string[][] ChapterThreeLandmarks={
@@ -42,7 +42,7 @@ namespace Sunfall
         Color RoomAccent=>run.Chapter>=5?LateColor(run.Chapter):run.Chapter==4?new Color(.95f,.58f,.4f):run.Chapter==3?new Color(.86f,.72f,.45f):run.Chapter==2?new Color(.55f,.75f,.67f):run.RoomIndex==0?new Color(.63f,.8f,.68f):run.RoomIndex==1?new Color(.48f,.8f,.83f):new Color(.88f,.48f,.54f);
         void LoadMapArt()
         {
-            LoadWorldProps();LoadCryptArt();LoadForestProps();
+            LoadWorldProps();LoadCryptArt();LoadForestProps();LoadCathedralArt();LoadCrownArt();LoadMirrorArt();LoadEclipseArt();LoadThroneArt();
             arenaBackdrop=Resources.Load<Texture2D>("World/AerialSanctum");
             forestBackdrop=Resources.Load<Texture2D>("World/SunlessForest");
             ruinPlatform=Resources.Load<Texture2D>("World/RuinPlatform");
@@ -83,7 +83,12 @@ namespace Sunfall
         {
             if((arenaBackdrop==null||forestBackdrop==null||ruinPlatform==null)&&Time.realtimeSinceStartup>=nextMapArtRetry)LoadMapArt();
             if(run.Chapter==2)DrawCryptBackdrop();
-            var backdrop=run.Chapter==2?null:run.Chapter>=3||run.Stage==RunStage.BossArena?arenaBackdrop:forestBackdrop;
+            if(run.Chapter==3)DrawCathedralBackdrop();
+            if(run.Chapter==4)DrawCrownBackdrop();
+            if(run.Chapter==5)DrawMirrorBackdrop();
+            if(run.Chapter==6)DrawEclipseBackdrop();
+            if(run.Chapter==7)DrawThroneBackdrop();
+            var backdrop=run.Chapter>=2&&run.Chapter<=7?null:run.Chapter>=5||run.Stage==RunStage.BossArena?arenaBackdrop:forestBackdrop;
             if(backdrop!=null)
             {
                 // A single panorama moves more slowly than the walkable world: no tiling seams.
@@ -92,7 +97,7 @@ namespace Sunfall
                 GUI.DrawTexture(new Rect(-offset,-105+cameraY*8,width,690),backdrop,ScaleMode.StretchToFill,true);
                 GUI.color=Color.white;
             }
-            Box(new Rect(0,130,1280,450),run.Chapter==2?new Color(.015f,.025f,.06f,.05f):run.RoomIndex>=2?new Color(.12f,.015f,.06f,.18f):new Color(.015f,.035f,.055f,.13f));
+            if(run.Chapter<3)Box(new Rect(0,130,1280,450),run.Chapter==2?new Color(.015f,.025f,.06f,.05f):run.RoomIndex>=2?new Color(.12f,.015f,.06f,.18f):new Color(.015f,.035f,.055f,.13f));
             DrawSkyRift();
             DrawRoomLandmarks();
             // Solid ground remains continuous. Only visible segments are submitted.
@@ -122,9 +127,9 @@ namespace Sunfall
             if(x>1300||x+pixels<-20||top>650||top<110)return;
             if(ground)Box(new Rect(x,top+20,pixels,Mathf.Max(0,600-top)),new Color(.025f,.055f,.075f));
             if(run.Chapter==2)DrawCryptStone(x,top,pixels,ground);
-            else if(run.Chapter>=5)DrawCathedralStone(x,top,pixels,ground);
+            else if(run.Chapter>=5)DrawRoyalCathedralStone(x,top,pixels,ground);
             else if(run.Chapter==4)DrawCrownStone(x,top,pixels,ground);
-            else if(run.Chapter==3)DrawCathedralStone(x,top,pixels,ground);
+            else if(run.Chapter==3)DrawRoyalCathedralStone(x,top,pixels,ground);
             else if(ruinPlatform!=null)
             {
                 // The source strip includes short grass above a flat stone surface.
@@ -135,7 +140,7 @@ namespace Sunfall
             }
             else Box(new Rect(x,top,pixels,ground?60:35),new Color(.16f,.28f,.3f));
             // Thin collision-edge highlight stays readable through grass and effects.
-            if(run.Chapter>2)Box(new Rect(x,top,pixels,2),RoomAccent);
+            // Authored royal stone edges provide the collision outline in late chapters.
         }
         // Decorative silhouettes stay behind terrain and actors; only Platforms collide.
         void DrawRoomLandmarks()

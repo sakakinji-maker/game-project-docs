@@ -82,10 +82,10 @@ namespace Sunfall
             new StoryLine(StoryVoice.Narrator,"태양은 아직 완전히 돌아오지 않았다. 그러나 봉인에 생긴 길 너머에서 어머니의 목소리가 또렷해졌다. 구출을 향한 문 하나가 열렸다.")
         };
         static readonly StoryLine[] CrownHeartArrivalStory={
-            new StoryLine(StoryVoice.Narrator,"아우렐의 문장이 무너진 자리에서 안쪽으로 향하는 포탈이 열렸다. 왕관의 심장부. 왕이 태양을 붙잡아 둔 명령이 아직 움직이는 곳이었다."),
+            new StoryLine(StoryVoice.Narrator,"아우렐의 봉인을 넘어 대성당 뒤편으로 나왔다. 안개 위의 다리는 왕실 요새로 이어졌다. 저 회랑 너머, 왕이 태양을 붙잡아 둔 심장이 아직 뛰고 있었다."),
             new StoryLine(StoryVoice.Mother,"빛이… 조금 따뜻해졌어. 네가 길을 열었구나. 하지만 이 안에는 아직 나를 묶은 매듭이 남아 있단다."),
             new StoryLine(StoryVoice.Hero,"이제 태양의 빛도 제 손에 있어요. 어머니에게 닿는 실을 따라갈게요. 혼자 버티게 두지 않겠어요.",StoryExpression.Determined),
-            new StoryLine(StoryVoice.Narrator,"왕관의 외벽과 역광의 도관을 지나면 심장 봉인실에 닿는다. 남은 왕실 악마들이 그 길을 막아서고 있었다.")
+            new StoryLine(StoryVoice.Narrator,"왕실 요새의 푸른 회랑 끝에서 쇠문이 울렸다. 심장 장치 아래의 결투장. 검은 망토의 심장지기가 망치를 끌며 기다리고 있었다.")
         };
         StoryLine[] storyLines;
         int storyPage;
@@ -113,11 +113,11 @@ namespace Sunfall
         bool TryBeginBossStory()
         {
             if(StoryActive||run==null)return false;
-            if(run.BossIntroducing&&bossArrivalStoryChapter!=run.Chapter&&RunModel.BossIntroDuration-run.BossIntroRemaining>=(run.Chapter==2?2.35f:1.8f))
+            if(run.BossIntroducing&&bossArrivalStoryChapter!=run.Chapter&&RunModel.BossIntroDuration-run.BossIntroRemaining>=(run.Chapter>=5?2.5f:run.Chapter==2?2.35f:1.8f))
             {
                 bossArrivalStoryChapter=run.Chapter;if(run.Chapter>=4){BeginStory("제"+run.Chapter+"장 · "+BossTitle,LateBossArrivalStories[run.Chapter-4]);return true;}BeginStory(run.Chapter==3?"제3장 · 태양 봉인의 집행관":run.Chapter==2?"제2장 · 왕실 사슬의 간수":"제1장 · 균열을 지키는 붉은 날개",run.Chapter==3?SolarBossArrivalStory:run.Chapter==2?ChainBossArrivalStory:BossArrivalStory);return true;
             }
-            if(run.BossDissolving&&bossDefeatStoryChapter!=run.Chapter&&RunModel.BossDefeatDuration-run.BossDefeatRemaining>=.35f)
+            if(run.BossDissolving&&bossDefeatStoryChapter!=run.Chapter&&RunModel.BossDefeatDuration-run.BossDefeatRemaining>=(run.Chapter==7?2.95f:.35f))
             {
                 bossDefeatStoryChapter=run.Chapter;if(run.Chapter>=4){BeginStory(LateDefeatHeading,LateBossDefeatStories[run.Chapter-4]);return true;}BeginStory(run.Chapter==3?"제3장 · 어머니에게 닿은 바늘땀":run.Chapter==2?"제2장 · 사슬을 끊는 검":"제1장 · 첫 번째 바늘땀",run.Chapter==3?SolarBossDefeatStory:run.Chapter==2?ChainBossDefeatStory:BossDefeatStory);return true;
             }

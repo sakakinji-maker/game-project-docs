@@ -4,51 +4,67 @@ namespace Sunfall
 {
     public sealed partial class SunfallGame
     {
+        readonly Texture2D[] cathedralRooms=new Texture2D[4];
+        static readonly string[] CathedralRoomResources={
+            "World/Stage3ApproachHDV2","World/Stage3CloisterHDV2",
+            "World/Stage3ChapelHDV2","World/Stage3SanctumHDV2"
+        };
+        Texture2D cathedralStone;
+        float nextCathedralRetry;
+        const float CathedralBackdropWidth=2070,CathedralBackdropTop=-30;
+        float CathedralBackdropOffset=>Mathf.Clamp01(cameraX/(Sunfall.Core.RunModel.WorldWidth-32))*(CathedralBackdropWidth-1280);
+        void LoadCathedralArt()
+        {
+            for(int i=0;i<cathedralRooms.Length;i++)
+            {
+                cathedralRooms[i]=Resources.Load<Texture2D>(CathedralRoomResources[i]);
+                if(cathedralRooms[i]!=null){cathedralRooms[i].filterMode=FilterMode.Point;cathedralRooms[i].wrapMode=TextureWrapMode.Clamp;}
+            }
+            cathedralStone=Resources.Load<Texture2D>("World/Stage3CathedralStoneV2");
+            if(cathedralStone!=null){cathedralStone.filterMode=FilterMode.Point;cathedralStone.wrapMode=TextureWrapMode.Clamp;}
+            nextCathedralRetry=Time.realtimeSinceStartup+1;
+        }
+        void EnsureCathedralArt()
+        {
+            bool missing=cathedralStone==null;
+            foreach(var room in cathedralRooms)missing|=room==null;
+            if(missing&&Time.realtimeSinceStartup>=nextCathedralRetry)LoadCathedralArt();
+        }
+        void DrawCathedralBackdrop()
+        {
+            EnsureCathedralArt();
+            Box(new Rect(0,0,1280,600),new Color(.018f,.026f,.045f));
+            var room=cathedralRooms[Mathf.Clamp(run.RoomIndex,0,3)];
+            if(room==null)return;
+            var color=GUI.color;GUI.color=Color.white;
+            // Each room owns a full 2172x724 panorama. Match stage one's scale,
+            // retain the source palette and leave the nave above the collision floor.
+            GUI.DrawTexture(new Rect(-CathedralBackdropOffset,CathedralBackdropTop+cameraY*8,
+                CathedralBackdropWidth,CathedralBackdropWidth*room.height/room.width),room,ScaleMode.StretchToFill,false);
+            GUI.color=color;
+        }
         void DrawCathedralLandmarks()
         {
-            Color stone=new Color(.115f,.115f,.15f,.96f),edge=new Color(.28f,.25f,.29f),gold=new Color(.55f,.43f,.27f);
-            float floor=SY(0),roof=SY(12);
-            // Reuse the distant panorama, with a stone nave and pointed windows in front.
-            Box(new Rect(0,roof,1280,floor-roof),new Color(.045f,.045f,.075f,run.RoomIndex==0?.5f:.87f));
-            for(int bay=0;bay<7;bay++)
+            // Architecture now belongs to the painted panorama, with no opaque
+            // procedural columns or windows obscuring its detailed masonry.
+            if(run.RoomIndex==3)DrawSolarSeal();
+        }
+        void DrawRoyalCathedralStone(float x,float top,float width,bool ground)
+        {
+            EnsureCathedralArt();if(cathedralStone==null)return;
+            // Measured source crop; the walkable lip is y292 in the original.
+            // Preserve stone proportions for narrow platforms and partial tiles.
+            const float sourceX=24,sourceY=282,sourceWidth=2122,sourceHeight=260;
+            float height=ground?83:61,scale=height/sourceHeight,tileWidth=sourceWidth*scale;
+            var color=GUI.color;GUI.color=Color.white;
+            for(float offset=0;offset<width;offset+=tileWidth)
             {
-                float x=SX(4+bay*9),top=SY(9.8f);
-                if(x<-180||x>1460)continue;
-                Box(new Rect(x-18,roof,36,floor-roof),stone);
-                Box(new Rect(x-22,roof,5,floor-roof),edge);
-                Box(new Rect(x+17,roof,5,floor-roof),edge);
-                for(float row=roof+28;row<floor;row+=33)Box(new Rect(x-18,row,36,2),edge);
-                Box(new Rect(x-30,floor-24,60,24),stone);
-                float window=x+150;
-                GothicPolygon(gold,new Vector2(window-58,top+40),new Vector2(window,top-25),new Vector2(window+58,top+40),new Vector2(window+58,top+190),new Vector2(window-58,top+190));
-                GothicPolygon(new Color(.075f,.065f,.125f),new Vector2(window-52,top+43),new Vector2(window,top-17),new Vector2(window+52,top+43),new Vector2(window+52,top+184),new Vector2(window-52,top+184));
-                for(int pane=0;pane<4;pane++)
-                {
-                    float y=top+58+pane*31;
-                    GothicDiamond(window,y,13,pane%2==0?new Color(.44f,.2f,.32f):new Color(.34f,.34f,.48f));
-                    GothicLine(new Vector2(window-49,y+15),new Vector2(window+49,y+15),edge,3);
-                }
-                GothicLine(new Vector2(window,top-14),new Vector2(window,top+184),gold,3);
-                // Tattered royal banners alternate with the windows.
-                if(bay%2==run.RoomIndex%2)
-                {
-                    GothicPolygon(new Color(.25f,.055f,.1f),new Vector2(x-21,top+26),new Vector2(x+21,top+26),new Vector2(x+21,top+140),new Vector2(x,top+125),new Vector2(x-21,top+140));
-                    GothicDiamond(x,top+64,10,gold);
-                }
+                float piece=Mathf.Min(tileWidth,width-offset);
+                var uv=new Rect(sourceX/2172,1-(sourceY+sourceHeight)/724,
+                    sourceWidth/2172*piece/tileWidth,sourceHeight/724);
+                GUI.DrawTextureWithTexCoords(new Rect(x+offset,top-10*scale,piece,height),cathedralStone,uv,true);
             }
-            if(run.RoomIndex==0){DrawBrokenArch(12,10);DrawBrokenArch(52,10);}
-            if(run.RoomIndex==3){DrawBrokenArch(32,11);DrawSolarSeal();}
-            if(run.RoomIndex==2)
-            {
-                float cx=SX(32),cy=SY(7);
-                GothicDisc(cx,cy,75,new Color(.43f,.32f,.18f));
-                GothicDisc(cx,cy,65,new Color(.045f,.035f,.06f));
-                for(int side=-1;side<=1;side+=2)
-                    DrawChainLinks(new Vector2(cx+side*115,cy-95),new Vector2(cx-side*60,cy+75),gold,18);
-                Box(new Rect(cx-95,floor-40,190,40),stone);
-                GothicLine(new Vector2(cx-95,floor-40),new Vector2(cx+95,floor-40),gold,3);
-                GothicDiamond(cx,cy,10,new Color(.82f,.58f,.28f));
-            }
+            GUI.color=color;
         }
         void DrawCathedralStone(float x,float top,float width,bool ground)
         {

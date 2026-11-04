@@ -19,9 +19,8 @@ namespace Sunfall
             EnsurePresentationArt();
             float extent=Mathf.Max(size.x,size.y);
             if(center.x+extent<-80||center.x-extent>1360||center.y+extent<-80||center.y-extent>660)return;
-            var matrix=GUI.matrix;var color=GUI.color;
-            GUI.matrix=matrix*Matrix4x4.Translate(new Vector3(center.x,center.y,0))*
-                Matrix4x4.Rotate(Quaternion.Euler(0,0,angle))*Matrix4x4.Scale(new Vector3(facing<0?-1:1,1,1));
+            var color=GUI.color;
+            using(ArtworkAt(center,angle,facing))
             try
             {
                 if(kind==SpellKind.EmberWave)
@@ -64,7 +63,7 @@ namespace Sunfall
                 DrawSpellEffectCell((int)kind,Vector2.zero,size,alpha);
                 DrawSpellStream(size,alpha,kind,6);
             }
-            finally {GUI.matrix=matrix;GUI.color=color;}
+            finally {GUI.color=color;}
         }
         void DrawFlameFrame(Vector2 center,Vector2 size,float phase,Color tint)
         {
@@ -101,10 +100,8 @@ namespace Sunfall
                 var point=Vector2.Scale(direction,size)*(.30f+age*.14f);
                 if(kind==SpellKind.CrimsonNova)
                 {
-                    var matrix=GUI.matrix;
-                    GUI.matrix=matrix*Matrix4x4.Translate(new Vector3(point.x,point.y,0))*Matrix4x4.Rotate(Quaternion.Euler(0,0,phase*Mathf.Rad2Deg));
-                    DrawFlameFrame(Vector2.zero,new Vector2(35,27)*(1-age*.25f),i,new Color(1,.55f,.5f,alpha*(1-age)*.8f));
-                    GUI.matrix=matrix;
+                    using(ArtworkAt(point,phase*Mathf.Rad2Deg))
+                        DrawFlameFrame(Vector2.zero,new Vector2(35,27)*(1-age*.25f),i,new Color(1,.55f,.5f,alpha*(1-age)*.8f));
                 }
                 else DrawAnimatedSpark(point,6+7*(1-age),new Color(tint.r,tint.g,tint.b,alpha*(1-age)*.8f));
             }
@@ -155,12 +152,17 @@ namespace Sunfall
         }
         void DrawChainPiece(Rect source,Vector2 center,Vector2 size,float angle,float alpha)
         {
-            var matrix=GUI.matrix;var color=GUI.color;
-            GUI.matrix=matrix*Matrix4x4.Translate(new Vector3(center.x,center.y,0))*Matrix4x4.Rotate(Quaternion.Euler(0,0,angle));
-            GUI.color=new Color(1,1,1,alpha);
-            var uv=new Rect(source.x/1254,1-source.yMax/1254,source.width/1254,source.height/1254);
-            GUI.DrawTextureWithTexCoords(new Rect(-size*.5f,size),playerSpellSheet,uv,true);
-            GUI.color=color;GUI.matrix=matrix;
+            if(playerSpellSheet==null||alpha<=0)return;
+            var color=GUI.color;
+            using(ArtworkAt(center,angle))
+            {
+                try
+                {
+                    GUI.color=new Color(1,1,1,Mathf.Clamp01(alpha));
+                    DrawArtwork(playerSpellSheet,new Rect(-size*.5f,size),new Rect(source.x/1254,1-source.yMax/1254,source.width/1254,source.height/1254));
+                }
+                finally {GUI.color=color;}
+            }
         }
     }
 }

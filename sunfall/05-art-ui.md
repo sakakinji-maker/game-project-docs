@@ -1,6 +1,6 @@
 # 아트·UI·수정 이력
 
-[목차](README.md) · 기준 2026-11-03
+[목차](README.md) · 기준 2026-11-05
 
 ## 공통 방향
 
@@ -46,7 +46,9 @@
 
 봉인 구조물도 `Stage2PixelSealV2`로 재제작했고, 발판은 1층의 `RuinPlatform`을 공유합니다. 봉인 닫힘/열림 이미지의 실제 분리 위치와 바닥 기준점을 보정했습니다. 모르가의 외형·패턴·사슬 절단 타이밍은 유지했습니다.
 
-3~7층 전체 배경까지 새 이미지로 전면 교체한 것은 아닙니다.
+3~7층도 방별 배경, 보스 아트와 연출 개편을 반영했습니다. 층별 상세 기록: [3층 대성당](../game/Sunfall/docs/STAGE3_CATHEDRAL_REDESIGN.md), [4층 왕실 요새](../game/Sunfall/docs/STAGE4_ROYAL_ARENA_REDESIGN.md), [5층 거울 성역](../game/Sunfall/docs/STAGE5_MIRROR_MASK_REDESIGN.md), [6층 일식 첨탑](../game/Sunfall/docs/STAGE6_ECLIPSE_TOWER_REDESIGN.md), [7층 마지막 왕좌](../game/Sunfall/docs/STAGE7_FINAL_THRONE_REDESIGN.md).
+
+2026-11-05: [이미지 잘림·봉합·4~6층 배치와 가시성 수정](../game/Sunfall/docs/RENDERING_STAGE_FIXES_2026_11_05.md). 컴파일만 확인했으며 최신 플레이 QA는 미실행입니다.
 
 ## 주요 에셋 위치
 
