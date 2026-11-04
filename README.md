@@ -45,9 +45,9 @@
 
 [웹게임 QA](qa/web-games-qa.md) · [원카드 QA 원본](qa/onecard-qa.docx) · [테스트 코드](web-games/tests/)
 
-### 3. SUNFALL (Unity 2D 액션) — 테스트 설계 · 결함 분석 · 밸런스
+### 3. SUNFALL (Unity 2D 액션, 개발 중) — 테스트 설계 · 결함 분석 · 밸런스
 
-직접 만든 7스테이지 액션 게임에서 QA 과정 전체를 진행했습니다. **PC 기준이며 모바일은 아직 대응하지 않았습니다.**
+현재 개발 중인 액션 게임(7스테이지까지 구현)에서 만들면서 QA를 함께 진행하고 있습니다. **PC 기준이며 모바일은 아직 대응하지 않았습니다.**
 
 - **테스트 케이스 14개:** 입력·전투·진행·보상·저장·개발자 도구
 - **버그 리포트 3건:** 착지 후 공격 상태 잔류, 투명도 계산 오류로 인한 캐릭터 깜빡임(불투명도 0.75), UI 겹침
@@ -62,7 +62,7 @@
 
 | 프로젝트 | 장르 | 자료 |
 | --- | --- | --- |
-| SUNFALL — 별을 꿰매는 마녀 | Unity 2D 횡스크롤 액션 | [문서](sunfall/README.md) |
+| SUNFALL — 별을 꿰매는 마녀 | Unity 2D 횡스크롤 액션 (개발 중) | [문서](sunfall/README.md) |
 | 한 수씩 배우는 쇼기 | 튜토리얼·AI·온라인 대국 | [플레이](https://onecard-game.onrender.com/shogi/) |
 | 한 수씩 배우는 바둑 | 입문 문제·AI·온라인 대국 | [플레이](https://onecard-game.onrender.com/baduk/) |
 | 원카드 | 2–4인 온라인 카드 게임 | [플레이](https://onecard-game.onrender.com/onecard/) |
