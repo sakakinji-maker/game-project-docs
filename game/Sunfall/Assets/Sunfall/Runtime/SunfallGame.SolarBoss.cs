@@ -32,11 +32,13 @@ namespace Sunfall
             int pose=boss.PhaseTransition>0?7:boss.Windup>0?(boss.Pattern==BossPattern.SolarSweep?4:boss.Pattern==BossPattern.SolarLances?6:7):
                 boss.AttackPose>0?(boss.Pattern==BossPattern.SolarSweep?5:boss.Pattern==BossPattern.SolarLances?6:7):boss.Walking?2+(int)(boss.AnimationTime*6)%2:(int)(boss.AnimationTime*2)%2;
             var texture=solarBossSheet;var frame=SolarBossFrames[pose];float scale=.42f;
+            var size=new Vector2(1774,887);
+            SelectEnemyMotion(boss,ref texture,ref frame,ref size,ref scale,out _);
             if(texture==null)return;
             var matrix=GUI.matrix;var color=GUI.color;var pivot=new Vector3(x,y,0);
             GUI.matrix=matrix*Matrix4x4.Translate(pivot)*Matrix4x4.Scale(new Vector3(boss.Facing,1,1))*Matrix4x4.Translate(-pivot);
             GUI.color=boss.Flash>0?new Color(1,.5f,.3f,alpha):boss.PhaseTwo?new Color(1,.74f,.56f,alpha):new Color(1,1,1,alpha);
-            DrawCharacterPose(texture,frame,new Vector2(1774,887),scale,x,y);
+            DrawCharacterPose(texture,frame,size,scale,x,y);
             GUI.matrix=matrix;GUI.color=color;
         }
         void DrawSolarTelegraph(Enemy boss)
@@ -109,11 +111,7 @@ namespace Sunfall
             }
             if(opening>0)
             {
-                for(int i=0;i<11;i++)
-                {
-                    float py=y-60+i*12;
-                    GothicLine(new Vector2(x-17,py+6),new Vector2(x+17,py-6),new Color(1,.87f,.52f,opening),2);
-                }
+                DrawRestorationScar(new Vector2(x-78,y+24),new Vector2(x+78,y+24),-30,16,1.1f);
                 Text("봉인의 매듭이 풀렸습니다",x-200,y+100,400,32,21,HudLight,TextAnchor.MiddleCenter);
             }
         }

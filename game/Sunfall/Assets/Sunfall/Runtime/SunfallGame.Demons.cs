@@ -87,6 +87,7 @@ namespace Sunfall
                 var size=new Vector2(1254,1254);
                 bool attacking=SelectDemonAttack(enemy,out var attackClip,out var attackPose);
                 if(attacking){texture=attackClip.Texture;frame=attackClip.Frames[attackPose];scale=attackClip.Scale;size=attackClip.Size;}
+                SelectEnemyMotion(enemy,ref texture,ref frame,ref size,ref scale,out _);
                 var savedMatrix=GUI.matrix;var savedColor=GUI.color;
                 var pivot=new Vector3(x,feetY,0);
                 GUI.matrix=savedMatrix*Matrix4x4.Translate(pivot)*Matrix4x4.Scale(new Vector3(enemy.Facing,1,1))*Matrix4x4.Translate(-pivot);

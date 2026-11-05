@@ -231,15 +231,28 @@ namespace Sunfall
         }
         void DrawMinimap()
         {
-            const float x=845,y=76,w=220,h=45;
-            Box(new Rect(x-7,y-6,w+14,h+10),new Color(.06f,.12f,.15f));
-            Box(new Rect(x,y+h-3,w,2),new Color(.3f,.5f,.48f));
+            const float x=900,y=42,w=342,h=70,verticalScale=5.6f;
+            Box(new Rect(x-12,16,w+24,108),new Color(.045f,.085f,.11f,.96f));
+            Text("지역 지도",x,21,130,19,12,new Color(.62f,.74f,.74f));
+            // Show the camera's visible world span without adding another border.
+            float viewStart=Mathf.Clamp01((cameraX-90/34f)/RunModel.WorldWidth);
+            float viewEnd=Mathf.Clamp01((cameraX+(1280-90)/34f)/RunModel.WorldWidth);
+            Box(new Rect(x+viewStart*w,y,(viewEnd-viewStart)*w,h),new Color(.36f,.57f,.59f,.12f));
+            float baseline=y+h-4;
+            Box(new Rect(x,baseline,w,2),new Color(.3f,.5f,.48f));
             foreach(var p in run.Platforms)
-                Box(new Rect(x+p.X/RunModel.WorldWidth*w,y+h-3-p.Y*4,p.Width/RunModel.WorldWidth*w,2),new Color(.39f,.67f,.6f));
+                Box(new Rect(x+p.X/RunModel.WorldWidth*w,baseline-p.Y*verticalScale,p.Width/RunModel.WorldWidth*w,3),new Color(.39f,.67f,.6f));
             foreach(var enemy in run.Enemies)
-                if(enemy.Hp>0)Box(new Rect(x+enemy.X/RunModel.WorldWidth*w-1,y+h-6-enemy.Y*4,enemy.Boss?4:2,3),enemy.Boss?new Color(1,.6f,.3f):new Color(.85f,.38f,.46f));
-            Box(new Rect(x+RunModel.ExitX/RunModel.WorldWidth*w-1,y+h-10,3,7),run.ExitOpen?Color.cyan:Color.gray);
-            Box(new Rect(x+run.X/RunModel.WorldWidth*w-2,y+h-9-run.Y*4,4,6),Color.white);
+                if(enemy.Hp>0)
+                {
+                    float markerSize=enemy.Boss?7:4;
+                    float markerY=Mathf.Max(y,baseline-4-enemy.Y*verticalScale);
+                    Box(new Rect(x+enemy.X/RunModel.WorldWidth*w-markerSize*.5f,markerY,markerSize,4),
+                        enemy.Boss?new Color(1,.6f,.3f):new Color(.85f,.38f,.46f));
+                }
+            Box(new Rect(x+RunModel.ExitX/RunModel.WorldWidth*w-2,baseline-10,5,10),run.ExitOpen?Color.cyan:Color.gray);
+            var player=RenderPosition(run,run.X,run.Y);
+            Box(new Rect(x+player.x/RunModel.WorldWidth*w-3,Mathf.Max(y,baseline-8-player.y*verticalScale),6,8),Color.white);
         }
     }
 }

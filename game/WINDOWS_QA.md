@@ -2,6 +2,10 @@
 
 버전: 0.1.0-qa.20261105.1 / Windows 64비트 / Unity 6000.3.27f1
 
+## 최신 소스와의 차이
+
+이 문서와 Release ZIP은 **2026-11-05 빌드** 기준입니다. 2026-11-06 소스의 HUD 정리·전체 적 새 모션·인식·봉합·최종 결말 연결 수정은 포함하지 않습니다. 이번 저장소 업데이트에서 EXE를 재빌드하거나 교체하지 않았습니다. [최신 소스 변경](Sunfall/docs/RELEASE_NOTES_2026_11_06.md).
+
 ## 실행
 
 1. `https://github.com/sakakinji-maker/game-project-docs/releases/download/sunfall-qa-2026.11.05-1/SUNFALL-Windows-x64-QA-2026.11.05-1.zip` 에서 ZIP을 받습니다. 저장소 접근 권한이 필요한 경우 GitHub에 로그인합니다.

@@ -12,14 +12,9 @@ namespace Sunfall
 
         void DrawGothicHudBackdrop()
         {
-            for(int i=0;i<13;i++)Box(new Rect(0,i*10,1280,10),new Color(.025f,.035f,.055f,.98f-i*.012f));
-            GothicLine(new Vector2(25,128),new Vector2(1255,128),HudGold,1);
-            for(int side=-1;side<=1;side+=2)
-            {
-                float x=640+side*30;
-                GothicLine(new Vector2(x,128),new Vector2(x+side*65,122),HudGold,1);
-            }
-            GothicDiamond(640,128,5,HudLight);
+            // One continuous surface avoids seams between translucent strips
+            // at fractional window scales. No full-width decorative rules.
+            Box(new Rect(0,0,1280,130),new Color(.025f,.035f,.055f,.91f));
         }
 
         void DrawPlayerVitals()
@@ -70,8 +65,7 @@ namespace Sunfall
         void DrawGothicSkillTray()
         {
             // Retain the existing touch hit rectangles, and use the same seals on desktop.
-            for(int i=0;i<7;i++)Box(new Rect(0,580+i*20,1280,20),new Color(.018f,.026f,.043f,.65f+i*.045f));
-            GothicLine(new Vector2(20,574),new Vector2(1260,574),new Color(.4f,.32f,.23f,.6f),1);
+            Box(new Rect(0,580,1280,140),new Color(.018f,.026f,.043f,.84f));
             DrawGothicSkill(roll,"구르기",keys.Label(4),0,run.RollCooldown,run.EffectiveRollReuse,run.Rolling);
             DrawEquippedSkillSlots();
             DrawGothicSkill(attack,"검 3연타",keys.Label(2),2,0,1,run.SwordActive);

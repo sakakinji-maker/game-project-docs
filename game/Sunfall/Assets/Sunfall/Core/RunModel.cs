@@ -262,6 +262,9 @@ namespace Sunfall.Core
         public int RemainingMonsters { get {int count=0;foreach(var e in Enemies)if(!e.Boss&&e.Hp>0)count++;return count;} }
         public bool ExitOpen=>Stage==RunStage.Approach?RemainingMonsters==0:BossDefeated&&BossDefeatRemaining<=1.2f;
         public bool CanUseExit=>!IsVillagePractice&&Phase==RunPhase.Combat&&!Cinematic&&ExitOpen&&!SkillChoicePending&&Grounded&&Y<1&&Math.Abs(X-ExitX)<=1.6f;
+        public const float RescuedMotherX=BossSpawnX+138f/34f;
+        public bool FinalRescueReady=>Chapter==FinalChapter&&Stage==RunStage.BossArena&&BossDefeated&&!Cinematic&&!SkillChoicePending;
+        public bool CanFinishAtMother=>FinalRescueReady&&Phase==RunPhase.Combat&&Grounded&&Y<1&&Math.Abs(X-RescuedMotherX)<=2;
         public int Zone=>X<18?0:X<44?1:2;
         public RunPhase Phase { get; private set; }
         public float X=2, Y, VelocityY, Hp=100, Damage=24, AttackPeriod=.4f;
@@ -687,7 +690,11 @@ namespace Sunfall.Core
                         if(distance>range)step=e.Facing*(e.Boss?1.7f:e.Kind==EnemyKind.Heavy?1.2f:2.2f)*dt;
                         else if(e.Cooldown<=0)e.Windup=e.WindupDuration;
                     }
-                    float nextX=Math.Max(e.MinX,Math.Min(e.MaxX,e.X+step));
+                    // Ground patrol bounds are encounter placement, not an
+                    // invisible wall between a guard and a nearby player.
+                    // Elevated guards must still stay on their supporting ledge.
+                    float chaseMin=e.Y<=.05f?.5f:e.MinX,chaseMax=e.Y<=.05f?ExitX-1:e.MaxX;
+                    float nextX=Math.Max(chaseMin,Math.Min(chaseMax,e.X+step));
                     e.Walking=Math.Abs(nextX-e.X)>.001f;e.X=nextX;
                 }
             }
@@ -699,6 +706,7 @@ namespace Sunfall.Core
             // Death has precedence; rewards never resurrect a lost run.
             if(Hp<=0){BloodOrbs.Clear();RoyalChains.Clear();SnareTimer=0;Phase=RunPhase.Dead;return;}
             if(enter&&CanOpenChest)OpenRewardChest();
+            else if(enter&&CanFinishAtMother){Phase=RunPhase.Won;return;}
             else if(enter&&CanUseExit)
             {
                 if(Stage==RunStage.Approach)
@@ -839,7 +847,13 @@ namespace Sunfall.Core
                 {
                     bool finisher=AttackStage==3&&!AirAttack;
                     DamageEnemy(e,SwordDamage*(finisher?1.6f:1),true);
-                    if(finisher&&!e.Boss&&e.Kind!=EnemyKind.Heavy)e.X=Math.Max(e.MinX,Math.Min(e.MaxX,e.X+ActionFacing*.75f));
+                    if(finisher&&!e.Boss&&e.Kind!=EnemyKind.Heavy)
+                    {
+                        // Use the same bounds as pursuit; a hit outside the old
+                        // patrol must not teleport the enemy back into that area.
+                        float min=e.Y<=.05f?.5f:e.MinX,max=e.Y<=.05f?ExitX-1:e.MaxX;
+                        e.X=Math.Max(min,Math.Min(max,e.X+ActionFacing*.75f));
+                    }
                 }
         }
         void UpdateWaves(float dt)

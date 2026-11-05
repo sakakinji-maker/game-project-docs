@@ -99,8 +99,6 @@ namespace Sunfall
             Text("SUNFALL  /  불씨 마을",40,30,700,50,30,amber);
             Text("상인에게 구매 · 대장장이에게 강화 · I 능력치 배분",40,90,560,45,19);
             DrawProgressionStatus(610,90,470);
-            Button("설정 / 정지",new Rect(1095,22,150,48),()=>{paused=true;Block();});
-            DrawInventoryEntry();DrawSkillWindowEntry();
 
             // Keep a visible fallback while Unity imports the background resource.
             if(villageBackdrop==null)

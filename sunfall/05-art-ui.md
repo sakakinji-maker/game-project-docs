@@ -91,3 +91,7 @@
 ![2스테이지 첫 방 고해상도 배경](../game/Sunfall/Assets/Sunfall/Resources/World/Stage2GateHDV3.png)
 
 [전체 생성 프롬프트·검증 기록](../game/Sunfall/docs/STAGE2_HD_BACKGROUNDS.md)
+
+## 2026-11-06 후속 반영
+
+상단 가로선·메뉴 버튼을 정리하고 미니맵을 확대했습니다. 일반 적 3종과 보스 7종의 새 24프레임 모션을 연결했습니다. 2·3·5·6층 봉합 위치·표현, 거울 복구 면, 7층 어머니 연결과 태양 위 봉합을 수정했습니다. [사용자 제보와 이미지](../qa/sunfall-regression-2026-11-06.md) · [생성 프롬프트](../game/Sunfall/docs/enemy-motion-v3-prompts.md). 컴파일 확인, 수정 후 플레이 결과는 대기입니다.

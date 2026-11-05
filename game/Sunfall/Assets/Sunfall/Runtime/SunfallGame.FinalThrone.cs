@@ -84,14 +84,23 @@ namespace Sunfall
             DrawThronePart(3,mother,Vector2.one*120,1-release);
             // The free portrait is slightly taller in source pixels; match her height.
             DrawThronePart(4,mother,Vector2.one*110,release);
-            for(int i=0;i<5;i++)
+            // Two curved tethers meet the cage's upper rim. They no longer
+            // fan out into the mother's body like straight electrical wires.
+            for(int i=0;i<2;i++)
             {
-                Vector2 from=sun+new Vector2(-45+i*22,38);
-                Vector2 to=mother+new Vector2(-25+i*12,30);
-                Vector2 mid=(from+to)*.5f+new Vector2(Mathf.Sin(visualClock+i)*6,16);
-                var gold=new Color(1,.72f,.32f,(1-release)*.55f);
-                GothicLine(from,mid,gold,1);GothicLine(mid,to,gold,1);
+                Vector2 from=sun+new Vector2(55+i*10,23-i*14);
+                Vector2 to=mother+new Vector2(-18+i*30,-43);
+                Vector2 bend=(from+to)*.5f+new Vector2(5,-22-i*12);
+                float alpha=(1-release)*(1-release);
+                DrawSilkCurve(from,bend,to,1,new Color(1,.77f,.42f,alpha*.65f),.45f,1.3f);
+                if(alpha>.01f)
+                {
+                    DrawScarGlint(from,alpha,new Color(1,.8f,.45f));
+                    DrawScarGlint(to,alpha,new Color(1,.8f,.45f));
+                }
             }
+            if(run.FinalRescueReady&&run.Phase==RunPhase.Combat)
+                DrawNameplateText(run.CanFinishAtMother?"↑ 어머니와 함께 귀환 · 결말 보기":"양어머니 · 다가가서 ↑",mother.x,floor-125,360,34,19,HudLight);
             if(run.BossDefeated)
             {
                 DrawFinalSkyStitches(sun,new Color(1,.83f,.42f));
@@ -103,8 +112,10 @@ namespace Sunfall
         void DrawFinalSkyStitches(Vector2 center,Color color)
         {
             float p=Mathf.Clamp01((BossDefeatElapsed-1.15f)/1.35f);
-            Vector2 from=center+new Vector2(-150,-30),to=center+new Vector2(150,20);
-            var path=new SewnScarPath(from,to,-9);
+            // Leave the recovered sun clear. The repaired wound follows its
+            // upper halo instead of drawing a ruler through the solar disc.
+            Vector2 from=center+new Vector2(-112,-38),to=center+new Vector2(112,-38);
+            var path=new SewnScarPath(from,to,-55);
             DrawSewnScar(path,p,22,color,Mathf.Clamp01((BossDefeatElapsed-2.5f)/.7f));
             DrawScarAfterglow(path,BossDefeatElapsed-2.5f,color);
         }

@@ -26,7 +26,7 @@ namespace Sunfall
         }
         void ResetMotion()
         {
-            visualClock=0;CaptureWorldMotion();
+            visualClock=0;enemyMotionStates.Clear();CaptureWorldMotion();
         }
         void LateUpdate()
         {

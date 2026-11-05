@@ -29,5 +29,14 @@ namespace Sunfall
             DrawSewnScar(path,progress,12,gold,Mathf.Clamp01((BossDefeatElapsed-2)/.7f));
             DrawScarAfterglow(path,BossDefeatElapsed-2,gold);
         }
+        void DrawRestorationScar(Vector2 from,Vector2 to,float bend,int stitches,float scale)
+        {
+            float progress=Mathf.Clamp01((BossDefeatElapsed-.6f)/1.5f);
+            var path=new SewnScarPath(from,to,bend);
+            var gold=new Color(.96f,.77f,.42f);
+            float settle=Mathf.Clamp01((BossDefeatElapsed-2.1f)/.8f);
+            DrawSewnScar(path,progress,stitches,gold,settle,scale);
+            DrawScarAfterglow(path,BossDefeatElapsed-2.1f,gold);
+        }
     }
 }

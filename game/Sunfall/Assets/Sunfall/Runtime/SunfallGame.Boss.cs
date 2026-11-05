@@ -67,6 +67,7 @@ namespace Sunfall
             var texture=stage1BossSheet;var size=new Vector2(1254,1254);
             bool attacking=SelectBossAttack(boss,out var attackClip,out var attackPose);
             if(attacking){texture=attackClip.Texture;item=attackClip.Frames[attackPose];scale=attackClip.Scale;size=attackClip.Size;}
+            SelectEnemyMotion(boss,ref texture,ref item,ref size,ref scale,out _);
             var oldMatrix=GUI.matrix;var oldColor=GUI.color;var pivot=new Vector3(x,feetY,0);
             GUI.matrix=oldMatrix*Matrix4x4.Translate(pivot)*Matrix4x4.Scale(new Vector3(boss.Facing,1,1))*Matrix4x4.Translate(-pivot);
             GUI.color=boss.Hp<=0?new Color(1,.24f,.4f,alpha):boss.Flash>0?new Color(1,.5f,.6f,alpha):new Color(1,boss.PhaseTwo?.82f:1,boss.PhaseTwo?.88f:1,alpha);

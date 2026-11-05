@@ -38,6 +38,7 @@ namespace Sunfall
             // Keep an existing demon visible while Unity imports the new sprite sheet.
             if(texture==null&&demonSheets!=null&&demonSheets[2]!=null)
             {texture=demonSheets[2];frame=DemonFrames[2][0];size=new Vector2(1254,1254);scale=.30f;}
+            SelectEnemyMotion(boss,ref texture,ref frame,ref size,ref scale,out _);
             if(texture==null)return;
             var matrix=GUI.matrix;var color=GUI.color;var pivot=new Vector3(x,y,0);
             GUI.matrix=matrix*Matrix4x4.Translate(pivot)*Matrix4x4.Scale(new Vector3(boss.Facing,1,1))*Matrix4x4.Translate(-pivot);

@@ -70,9 +70,15 @@ namespace Sunfall
                 // against the idle helmet-to-heel height, not total weapon bounds.
                 scale=.435f;
             }
-            DrawCharacterPose(texture,frame,new Vector2(1774,887),scale,x,y);
-            if(index==1)DrawLysseaMask(boss,pose,frame,scale,x,y);
-            if(index==3)DrawSolveinArmorLight(boss,pose,frame,scale,x,y);
+            var size=new Vector2(1774,887);
+            bool extended=SelectEnemyMotion(boss,ref texture,ref frame,ref size,ref scale,out var motionPose);
+            DrawCharacterPose(texture,frame,size,scale,x,y);
+            if(extended)DrawEnemyMotionProps(boss,motionPose,frame,scale,x,y);
+            else
+            {
+                if(index==1)DrawLysseaMask(boss,pose,frame,scale,x,y);
+                if(index==3)DrawSolveinArmorLight(boss,pose,frame,scale,x,y);
+            }
             GUI.matrix=matrix;GUI.color=color;
         }
         void DrawLateTelegraph(Enemy boss)

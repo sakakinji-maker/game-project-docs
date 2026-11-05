@@ -72,28 +72,17 @@ namespace Sunfall
             if(progress<=0)return;
             var gold=new Color(1,.82f,.46f);
             var top=new Vector2(x,floor-270);var bottom=new Vector2(x,floor-53);
-            // Fill the mirror opening with a restrained warm reflection. All
-            // geometry stays inside the carved frame rather than covering it.
-            float light=Mathf.SmoothStep(0,1,progress)*(.11f+.07f*(1-settle));
-            GothicPolygon(new Color(.95f,.65f,.22f,light),top,
-                new Vector2(x+60,floor-226),new Vector2(x+60,floor-55),
-                new Vector2(x-60,floor-55),new Vector2(x-60,floor-226));
-            var main=new SewnScarPath(top,bottom,7);
-            DrawSewnScar(main,progress,17,gold,settle,1.8f);
-            // Branching seams make the repair read across the glass, not as a
-            // tiny isolated line in the centre of a large empty mirror.
-            float branch=Mathf.Clamp01((progress-.3f)/.7f);
+            // Restore the authored reflection instead of translucent scanline
+            // polygons, whose row boundaries formed stripes at scaled resolutions.
+            DrawStandingMirror(0,x,floor,Mathf.SmoothStep(0,1,progress)*.88f);
+            var main=new SewnScarPath(top+new Vector2(-14,25),bottom+new Vector2(14,-8),-10);
+            DrawSewnScar(main,progress,18,gold,settle,1.25f);
             for(int side=-1;side<=1;side+=2)
             {
-                var shoulder=new Vector2(x+side*59,floor-222);
-                var foot=new Vector2(x+side*59,floor-57);
-                DrawSilkCurve(top,new Vector2(x+side*66,floor-263),shoulder,progress,
-                    new Color(1,.82f,.5f,.66f),1-settle,1.6f);
-                DrawSilkCurve(shoulder,new Vector2(x+side*65,floor-140),foot,progress,
-                    new Color(1,.82f,.5f,.55f),1-settle,1.6f);
-                var join=new Vector2(x,floor-(side<0?180:133));
-                var edge=new Vector2(x+side*54,floor-(side<0?223:76));
-                DrawSewnScar(new SewnScarPath(join,edge,side*4),branch,5,gold,settle,1.55f);
+                var join=main.Point(side<0?.33f:.68f);
+                var edge=new Vector2(x+side*46,floor-(side<0?208:104));
+                DrawSewnScar(new SewnScarPath(join,edge,side*3),
+                    Mathf.Clamp01((progress-.3f)/.7f),4,gold,settle,.9f);
             }
             DrawScarAfterglow(main,elapsed-1.4f,gold);
         }

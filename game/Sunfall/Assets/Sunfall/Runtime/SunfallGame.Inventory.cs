@@ -58,11 +58,6 @@ namespace Sunfall
             Text(label,r.x,r.y,r.width,r.height,17,action==null?new Color(.47f,.51f,.53f):HudLight,TextAnchor.MiddleCenter);
             if(action!=null)hits.Add(new Hit(r,action));
         }
-        void DrawInventoryEntry()
-        {
-            if(!CanToggleInventory)return;
-            EquipmentButton("인벤토리 (I)",village?new Rect(1095,78,150,35):new Rect(1095,102,150,22),ToggleInventory);
-        }
         void DrawInventory()
         {
             Overlay();

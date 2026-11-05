@@ -5,6 +5,19 @@ namespace Sunfall.Tests
 {
     public partial class RunModelTests
     {
+        [Test] public void FinalBossAllowsEndingBesideMotherAfterRewardChoice()
+        {
+            var r=EnterLateChapter(7);EnterBoss(r);FinishBossIntro(r);
+            r.X=RunModel.RescuedMotherX;r.Y=0;r.Step(0,false,false,enter:true);
+            Assert.AreEqual(RunPhase.Combat,r.Phase);Assert.IsFalse(r.FinalRescueReady);
+            r.Enemies[0].Hp=0;r.Step(0,false,false);FinishBossDefeat(r);
+            Assert.IsFalse(r.FinalRescueReady);Assert.IsTrue(r.ChooseBossSkill(0));
+            Assert.IsTrue(r.FinalRescueReady);
+            r.X=r.ChestX;r.Y=0;r.VelocityY=0;r.Step(0,false,false,enter:true);
+            Assert.IsTrue(r.ChestOpened);Assert.AreEqual(RunPhase.Combat,r.Phase);
+            r.X=RunModel.RescuedMotherX;r.Y=0;r.VelocityY=0;r.Step(0,false,false,enter:true);
+            Assert.AreEqual(RunPhase.Won,r.Phase);Assert.AreEqual(7,r.Chapter);
+        }
         static RunModel EnterLateChapter(int chapter)
         {
             var r=FinishThreeBosses(19);r.X=RunModel.ExitX;r.Step(0,false,false,enter:true);

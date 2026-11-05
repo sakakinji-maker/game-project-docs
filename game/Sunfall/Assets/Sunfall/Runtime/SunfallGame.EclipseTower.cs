@@ -61,7 +61,8 @@ namespace Sunfall
             DrawRavenPart(3,center,Vector2.one*470,(1-dissolve)*.25f,visualClock*4);
             DrawRavenPart(2,center,Vector2.one*310,1-dissolve);
             DrawRavenPart(3,center,Vector2.one*350,(1-dissolve)*.5f,-visualClock*6);
-            if(run.BossDefeated)DrawLateSeam(center.x,center.y,HudLight);
+            if(run.BossDefeated)
+                DrawRestorationScar(center+new Vector2(-155,24),center+new Vector2(155,24),-32,24,1.4f);
         }
         void DrawEclipseAtmosphere()
         {

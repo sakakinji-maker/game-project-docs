@@ -81,7 +81,11 @@ namespace Sunfall
                 DrawCryptSealState(1,x,y);GUI.color=color;
             }
             // The opened shell remains as scenery after the guardian emerges.
-            if(run.BossDefeated)DrawLateSeam(x,y-237,HudLight);
+            if(run.BossDefeated)
+            {
+                // Repair the opened shell itself, not empty air above it.
+                DrawRestorationScar(new Vector2(x-28,y-194),new Vector2(x+24,y-69),-16,12,1.25f);
+            }
         }
         void DrawCryptSealState(int state,float x,float groundY)
         {

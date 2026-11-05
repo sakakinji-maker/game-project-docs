@@ -15,8 +15,10 @@ namespace Sunfall.Core
         }
         bool InCombatView(Enemy enemy)
         {
-            return !hasCombatView||(enemy.X>=combatLeft&&enemy.X<=combatRight&&
-                enemy.Y>=combatBottom&&enemy.Y+enemy.BodyHeight<=combatTop);
+            // A visible torso can still engage when its feet or head cross the
+            // viewport edge during a jump/camera return. Fully hidden enemies wait.
+            return !hasCombatView||(enemy.X+.45f>=combatLeft&&enemy.X-.45f<=combatRight&&
+                enemy.Y+enemy.BodyHeight>=combatBottom&&enemy.Y<=combatTop);
         }
     }
 }

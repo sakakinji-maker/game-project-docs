@@ -48,10 +48,6 @@ namespace Sunfall
             int slot=run.EquippedSlot(spell);return slot>=0?keys.Label(5+slot)+" 사용":"K 스킬창에서 장착";
         }
         static int SkillSymbol(SpellKind spell)=>LateSpellCatalog.Contains(spell)?8+LateSpellCatalog.Slot(spell):spell==SpellKind.EmberWave?1:spell==SpellKind.AshLance?4:spell==SpellKind.CrimsonNova?5:spell==SpellKind.ChainPull||spell==SpellKind.ChainRain?6:7;
-        void DrawSkillWindowEntry()
-        {
-            if(CanToggleSkills)EquipmentButton("스킬 (K)",new Rect(1095,village?118:76,150,22),ToggleSkillWindow);
-        }
         void DrawEquippedSkillSlots()
         {
             for(int i=0;i<4;i++)

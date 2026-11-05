@@ -1,0 +1,4 @@
+Sunfall.Core exit=0
+Sunfall.Runtime exit=0
+Sunfall.Editor exit=0
+Sunfall.Tests exit=0

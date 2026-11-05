@@ -246,10 +246,8 @@ namespace Sunfall
             DrawGothicHudBackdrop();DrawMinimap();DrawBossHud();DrawPlayerVitals();
             Text($"SUNFALL · {run.Chapter}스테이지",35,22,245,35,23,new Color(.88f,.68f,.37f));
             Text(RoomTitle,35,67,260,35,22);
-            Text(run.Stage==RunStage.Approach?(run.ExitOpen?NextRoomTitle+" · 문 앞에서 ↑":RunModel.ChapterName(run.Chapter)+" · 적 "+run.RemainingMonsters):run.ChestAvailable&&!run.ChestOpened?"보물상자 앞에서 ↑ · 물약과 장비":run.ExitOpen?"포탈 앞에서 ↑ · "+NextRoomTitle:BossTitle+" 처치",610,28,470,35,17);
-            Button("설정 / 정지",new Rect(1095,22,150,48),()=>{paused=true;Block();});
-            DrawInventoryEntry();DrawSkillWindowEntry();
-            DrawProgressionStatus(610,77,225);
+            Text(run.FinalRescueReady?"어머니 앞에서 ↑ · 함께 귀환하여 결말 보기":run.Stage==RunStage.Approach?(run.ExitOpen?NextRoomTitle+" · 문 앞에서 ↑":RunModel.ChapterName(run.Chapter)+" · 적 "+run.RemainingMonsters):run.ChestAvailable&&!run.ChestOpened?"보물상자 앞에서 ↑ · 물약과 장비":run.ExitOpen?"포탈 앞에서 ↑ · "+NextRoomTitle:BossTitle+" 처치",640,20,228,54,16);
+            DrawProgressionStatus(640,77,228);
             DrawGothicSkillTray();
             DrawHealingNotice();
             DrawSpellRewardNotice();
@@ -257,6 +255,7 @@ namespace Sunfall
         void Overlay(){hits.Clear();Box(new Rect(0,0,1280,720),new Color(.015f,.03f,.05f,.93f));}
         void DrawResult()
         {
+            if(run.Phase==RunPhase.Won){DrawFinalEnding();return;}
             Overlay();bool win=run.Phase==RunPhase.Won;
             Text(win?"함께 돌아온 아침":"빛을 찾아 다시 한번",90,125,1100,80,46,Color.white);
             Text(win?"일곱 봉인을 넘어 양어머니와 함께 돌아왔습니다.\n태양은 다시 떠오르고, 하늘에는 금빛 봉합 자국이 남았습니다.":"어머니에게 닿은 별실은 아직 끊어지지 않았습니다.\n마을에서 정비하고, 다시 성소로 향하세요.",90,245,1100,100,26);
