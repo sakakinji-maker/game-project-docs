@@ -4,7 +4,7 @@
 
 유한대학교 게임콘텐츠학과 졸업 · 컴퓨터소프트웨어전공 전공심화과정 재학 (2027.02 졸업 예정) · sakakinji@naver.com
 
-**[QA 사례 모음](qa/README.md)** · **[웹게임 플레이](https://onecard-game.onrender.com)** · **[Notion QA 포트폴리오](https://www.notion.so/401137cf520a81e4b9cac4c9754fa617)**
+**[QA 사례 모음](qa/README.md)** · **[웹게임 플레이](https://onecard-game.onrender.com)** · **[Notion QA 포트폴리오](https://app.notion.com/p/QA-20182c4386db83f595c901951a88e9d8)**
 
 ## 한눈에 보기
 
