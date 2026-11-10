@@ -27,6 +27,8 @@
 | --- | --- | --- | --- |
 | [001](qa/game-bug-reports/001-cookierun-kingdom-quest-reward-error.md) | 쿠키런: 킹덤 | 퀘스트 보상 수령 후 보상받기를 누르면 "알 수 없는 문제" 오류가 반복 발생 | Major |
 
+<img src="qa/game-bug-reports/images/001-1-reward-popup.png" width="400" alt="보상 창"> <img src="qa/game-bug-reports/images/001-2-error-popup.png" width="400" alt="오류 창">
+
 [전체 목록](qa/game-bug-reports/README.md)
 
 ### 2. 메이플스토리 월드 게임 — 플레이 이슈 40건
@@ -37,6 +39,8 @@
 - 영역: UI 9 · 입력 6 · 리소스 6 · 성장 5 · 진행 4 · 스킬 4 · 전투 3 · 기타 3
 - 관찰 / 기대 결과 / 재검증 절차를 분리하고, 취소선만으로 수정 완료를 추정하지 않았습니다.
 - 집중 분석: 화면 전환에 따라 능력치가 **920 → 520 → 620**으로 변하는 문제, 강화 수치 미반영(UI 누락인지 계산 누락인지 분리), 사용권 소멸(정책상 정상 차감인지 먼저 확인)
+
+<img src="screenshots/qa-maple-worlds-case-page.jpg" width="560" alt="메이플스토리 월드 QA 사례 페이지">
 
 [40건 보고서](qa/maple-worlds-qa.md) · [CSV](web-games/public/qa/maple-worlds/issues.csv) · [사례 페이지](https://onecard-game.onrender.com/qa/maple-worlds/index.html)
 
@@ -53,6 +57,10 @@
 
 버그처럼 보여도 명세상 정상인 경우를 구분하고, 정상이라도 플레이어가 오해하지 않도록 안내를 추가했습니다. 쇼기·바둑·스토리 게임의 규칙·UI·온라인 대국은 자동화 테스트 88개로 검증합니다.
 
+| 원카드 AI 대전 | 바둑 입문 문제 | 쇼기 컴퓨터 연습 |
+| --- | --- | --- |
+| <img src="screenshots/web-01-onecard-ai-game.jpg" width="260" alt="원카드"> | <img src="screenshots/web-02-baduk-lesson.jpg" width="260" alt="바둑"> | <img src="screenshots/web-03-shogi-practice.jpg" width="260" alt="쇼기"> |
+
 [웹게임 QA](qa/web-games-qa.md) · [원카드 QA 원본](qa/onecard-qa.docx) · [테스트 코드](web-games/tests/)
 
 ### 4. SUNFALL (Unity 2D 액션, 개발 중) — 테스트 설계 · 결함 분석 · 밸런스
@@ -65,6 +73,10 @@
 - **Windows QA 빌드:** 다른 PC에서 실행 가능한 EXE 배포 (2026-11-05 빌드)
 - **회귀 테스트:** 인식·추적 및 최종 귀환 조건 등의 테스트 소스 추가. 최신 Core / Runtime / Editor / Tests 컴파일 확인, 테스트 실행 결과는 별도 관리
 - **밸런스:** 장검 보너스 +10% → +30%로 중갑병 처치 타수 4타 → 3타
+
+| SF-R01 적 재인식 안 됨 (P1) | SF-R06 각진 연결선 (P2) | SF-R07 결말 미진행 (P1) |
+| --- | --- | --- |
+| <img src="qa/evidence/sunfall/2026-11-06/01-enemy-awareness.png" width="280" alt="SF-R01"> | <img src="qa/evidence/sunfall/2026-11-06/05-stage7-mother-tethers.png" width="220" alt="SF-R06"> | <img src="qa/evidence/sunfall/2026-11-06/06-stage7-aftermath.png" width="200" alt="SF-R07"> |
 
 **[본인 기획·제작 활동](sunfall/07-work-and-decisions.md)** · **[직접 플레이 QA 누적 30개 묶음](qa/sunfall-user-qa-history.md)** · **[최근 제보 7건·스크린샷·재검증](qa/sunfall-regression-2026-11-06.md)**
 
@@ -87,7 +99,7 @@
 | 대한민국 생태계교란종 잡기 | 교육형 턴제 RPG | [플레이](https://onecard-game.onrender.com/ecodex/) |
 | 애프터라이트: 마지막 도시 | 수집·방치형 RPG (기획 단계) | [기획서](06_애프터라이트_게임기획서.md) |
 
-[웹게임 프로젝트 상세](web-games/PROJECTS.md) · 플레이 링크는 배포 서버 상태에 따라 열리지 않을 수 있습니다.
+[웹게임 프로젝트 상세](web-games/PROJECTS.md) · [전체 스크린샷](screenshots/README.md) · 플레이 링크는 배포 서버 상태에 따라 열리지 않을 수 있습니다.
 
 ## 저장소 구조
 
@@ -97,6 +109,7 @@
 | [web-games/](web-games/) | 웹게임 6종 서버·클라이언트·자동화 테스트 |
 | [game/](game/) · [sunfall/](sunfall/) | SUNFALL Unity 프로젝트와 문서 |
 | `05_`, `06_*.md` | 스토리 게임 기획서·대본·인물 설정, 애프터라이트 기획서 |
+| [screenshots/](screenshots/README.md) | 포트폴리오·지원서에 사용한 화면 모음 |
 | [drafts/](drafts/) | 작성 중인 기획 초안 |
 
 ## 테스트 실행
