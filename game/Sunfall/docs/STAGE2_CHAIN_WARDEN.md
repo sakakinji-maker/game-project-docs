@@ -30,7 +30,7 @@
 
 ## 도트와 생성 기록
 
-- 모드: 내장 `image_gen`, `transparent_background=true`. 기존 `Resources/Demons/Heavy.png`를 악마 계열과 화풍 참고로 사용한 신규 생성. 추가 사용자 사진은 필요하지 않았습니다.
+- 모드: 내장 `image_gen`, `transparent_background=true`. 기존 `Resources/Demons/Heavy.png`를 악마 계열과 화풍 참고로 사용한 신규 생성. 추가 본인 사진은 필요하지 않았습니다.
 - 원본 출력: `C:/Users/sakak/.codex/generated_images/01a17569-bfbf-7233-a71a-72eece5bde92/exec-00672e4f-fb64-4a37-9928-ccca55f3f17c.png`
 - 적용 파일: `Assets/Sunfall/Resources/Demons/Stage2ChainWardenV1.png` (1774×887, 알파 유지).
 - 윗줄 대기 2·걷기 2, 아랫줄 내려치기 준비·타격·구속 시전·낙하 시전. 모든 포즈 배율 0.36, 프레임별 발 기준점과 넉넉한 무기 영역, 기존 포즈 전환 보간 사용. Point/Clamp/무압축/밉맵 없음. 불러오는 동안 기존 중갑 악마를 대체 표시합니다.

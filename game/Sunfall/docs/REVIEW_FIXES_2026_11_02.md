@@ -16,4 +16,4 @@
 - Core·Runtime·Editor·Tests 컴파일 통과.
 - 로그: `Temp/ReviewFixCompile/compile.log`.
 - `AirAttackRecoveryTests.cs`에 착지 후 걸어 내려가기, 공격 도중 착지, 회수 중 이동 방향 전환을 다루는 회귀 테스트 3개를 추가했다. 컴파일만 했으며 실행하지 않았다.
-- Unity Play, 사용자 QA, 테스트 실행 없음. 화면 체감이나 모든 버그가 해결됐다는 의미는 아니다.
+- Unity Play, 본인 QA, 테스트 실행 없음. 화면 체감이나 모든 버그가 해결됐다는 의미는 아니다.

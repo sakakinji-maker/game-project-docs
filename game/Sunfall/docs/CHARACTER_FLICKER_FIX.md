@@ -17,4 +17,4 @@
 
 주요 파일: `Assets/Sunfall/Runtime/SunfallGame.Motion.cs` 및 Hero, VillageNpcs, Demons, Boss, ChainBoss, SolarBoss, LateBosses의 호출부.
 
-컴파일 로그: `Temp/CharacterFlickerCompile/compile.log`. 코드 검토 및 컴파일만 수행하며 Unity Play·게임 QA·테스트 실행은 하지 않습니다. 실제 표시 확인은 사용자 QA 대상입니다.
+컴파일 로그: `Temp/CharacterFlickerCompile/compile.log`. 코드 검토 및 컴파일만 수행하며 Unity Play·게임 QA·테스트 실행은 하지 않습니다. 실제 표시 확인은 본인 QA 대상입니다.

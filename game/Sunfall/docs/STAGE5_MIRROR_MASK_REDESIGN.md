@@ -30,7 +30,7 @@
 ## 확인
 `tools/Compile-AttackArt.ps1 -OutputFolder Temp/Stage5MirrorCompile`로 Core/Runtime/Editor/Tests 소스 컴파일. 테스트 실행이나 Unity Play는 하지 않음. 로그: `Sunfall/Temp/Stage5MirrorCompile/compile.log`.
 
-에셋 원본 크기·알파·셀 경계와 코드 연결을 정적으로 확인. 실제 화면의 겹침, 전투 가독성, 연출 리듬은 사용자 QA 대상.
+에셋 원본 크기·알파·셀 경계와 코드 연결을 정적으로 확인. 실제 화면의 겹침, 전투 가독성, 연출 리듬은 본인 QA 대상.
 
 ## 생성 프롬프트 원문
 

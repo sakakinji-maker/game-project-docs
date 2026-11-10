@@ -22,4 +22,4 @@ Unity 6000.3.27f1 내장 Roslyn과 프로젝트 Bee 참조 설정으로 Core / R
 
 로그: `Temp/GothicHudCompile/compile.log`.
 
-사용자 요청에 따라 컴파일만 확인했으며 Unity Play, 테스트 실행, 실제 플레이·시각 QA는 하지 않았습니다.
+본인 요청에 따라 컴파일만 확인했으며 Unity Play, 테스트 실행, 실제 플레이·시각 QA는 하지 않았습니다.

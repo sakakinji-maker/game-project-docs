@@ -1,10 +1,10 @@
 # 대사창의 찢어진 하늘 일러스트
 
-2026-11-01. 사용자가 첨부한 서장 대사창 왼쪽의 단순 직선/사선 임시 봉합 그림을 전용 환경 일러스트로 교체했습니다.
+2026-11-01. 본인이 첨부한 서장 대사창 왼쪽의 단순 직선/사선 임시 봉합 그림을 전용 환경 일러스트로 교체했습니다.
 
 최종 이미지: `Assets/Sunfall/Resources/Story/StitchedSkyV1.png`.
 
-내장 image_gen으로 새 이미지 1장을 생성했습니다. 원본은 `C:/Users/sakak/.codex/generated_images/01a17569-bfbf-7233-a71a-72eece5bde92/exec-b49bf97d-d435-46ba-885f-1f89f3d2ba5d.png`. 프로젝트에 수정 없이 복사했으며 CLI/API fallback을 사용하지 않았습니다. 사용자 스크린샷은 수정 위치를 확인하는 용도로 사용했고 생성 도구에 편집 대상으로 전달하지 않았습니다.
+내장 image_gen으로 새 이미지 1장을 생성했습니다. 원본은 `C:/Users/sakak/.codex/generated_images/01a17569-bfbf-7233-a71a-72eece5bde92/exec-b49bf97d-d435-46ba-885f-1f89f3d2ba5d.png`. 프로젝트에 수정 없이 복사했으며 CLI/API fallback을 사용하지 않았습니다. 본인 스크린샷은 수정 위치를 확인하는 용도로 사용했고 생성 도구에 편집 대상으로 전달하지 않았습니다.
 
 구성은 짙은 구름, 비대칭 하늘 균열, 별이 보이는 깊은 내부, 곡선으로 이어진 금빛 실, 안개 속 고딕 첨탑입니다. `StoryArtImporter`는 최대 1024px, Bilinear, Clamp, 무압축, Mipmap 끔으로 작은 대사창에서 매끄럽게 표시합니다.
 

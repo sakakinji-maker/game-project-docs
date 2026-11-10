@@ -10,13 +10,13 @@ Unity 버전: 6000.3.27f1. 프로젝트 여는 방법은 [상위 게임 안내](
 
 아래는 날짜별 누적 작업 기록이며 과거 수치와 이미지를 포함합니다.
 
-2026-11-02 2층 회랑·모르가 개편: 사용자 참고 기반 청록빛 전투방 3개/보스방, 석조 발판, 닫힌/깨진 봉인, 껍질형 모르가 8포즈 및 대화 표정 6종을 적용했습니다. 사슬 절단·반동·파편·껍질 개방·등장 후 대사 연출을 연결했습니다. 상세/에셋/프롬프트: docs/STAGE2_CRYPT_REDESIGN.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/Stage2CryptCompile/compile.log. 플레이·QA·테스트 실행 없음.
+2026-11-02 2층 회랑·모르가 개편: 본인 참고 기반 청록빛 전투방 3개/보스방, 석조 발판, 닫힌/깨진 봉인, 껍질형 모르가 8포즈 및 대화 표정 6종을 적용했습니다. 사슬 절단·반동·파편·껍질 개방·등장 후 대사 연출을 연결했습니다. 상세/에셋/프롬프트: docs/STAGE2_CRYPT_REDESIGN.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/Stage2CryptCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
 2026-11-02 마을 점프·스킬: 실제 전투 물리·시전·이펙트·쿨타임을 마을에서도 사용합니다. K 스킬 장착, 귀환 시 획득 스킬 연습, NPC/포탈 입력 분리, 고정 카메라를 연결했습니다. 새 모험의 기본 스킬 시작 규칙 유지. 상세: docs/VILLAGE_ACTIONS.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/VillageActionsCompile/compile.log. 테스트 3개 추가·컴파일만 수행, 플레이·QA·테스트 실행 없음.
 
 2026-11-02 환경설정 개편: 고딕 패널·조작/소리/화면 버튼 탭, 9개 키 버튼과 입력 모달, 음량 게이지, 화면 버튼 표시 저장을 적용했습니다. 키 변경 중 F10의 진행 초기화도 차단했습니다. 상세: docs/SETTINGS_REDESIGN.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/SettingsRedesignCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
-2026-11-02 시작 화면 개편: 사용자 제공 사슬 태양·대성당 배경, 중앙 금빛 SUNFALL 로고, 한국어 부제, 텍스트 메뉴를 적용했습니다. 화면은 고정하고 작은 금빛 입자만 추가했습니다. 기존 시작/설정 입력과 서장 시청 기록 유지. 상세·이미지·생성 프롬프트: docs/TITLE_REDESIGN.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/TitleRedesignCompile/compile.log. 플레이·QA·테스트 실행 없음.
+2026-11-02 시작 화면 개편: 본인 제공 사슬 태양·대성당 배경, 중앙 금빛 SUNFALL 로고, 한국어 부제, 텍스트 메뉴를 적용했습니다. 화면은 고정하고 작은 금빛 입자만 추가했습니다. 기존 시작/설정 입력과 서장 시청 기록 유지. 상세·이미지·생성 프롬프트: docs/TITLE_REDESIGN.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/TitleRedesignCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
 2026-11-02 주인공·마을 NPC 표정: 주인공/대장장이/상인/아린 각각 정면 표정 6종, 총 24종을 생성하고 대사 50줄 및 상점·강화 화면에 연결했습니다. 상세·이미지 경로·생성 프롬프트: docs/RESIDENT_DIALOGUE_PORTRAITS.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/ResidentPortraitCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
@@ -28,7 +28,7 @@ Unity 버전: 6000.3.27f1. 프로젝트 여는 방법은 [상위 게임 안내](
 
 2026-11-02 스킬 애니메이션 및 시작 화면 수정: 첫 화면에서 추가 GUI 그룹을 제거하고 기존 캔버스 좌표 방식으로 복원했습니다. 불꽃 8프레임 루프·불씨 흐름·사슬 마디의 발사/휘어짐/반동·고리/보호막 입자·광창/파편 잔상을 적용했습니다. 상세: docs/SPELL_ANIMATION.md. 이미지: Assets/Sunfall/Resources/Effects/FlameLoopV1.png. 생성 프롬프트: docs/FLAME_ANIMATION_PROMPT.md. 컴파일 로그: Temp/SpellAnimationCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
-2026-11-02 화면 표현 통합 수정: 스킬 15종 실제 이미지 이펙트, 장비 5종 이미지(인벤토리·장착 칸·상점·강화·보상), 1~7층 보스 대화 초상화를 연결했습니다. 공중 베기 배율을 사용자 피드백에 따라 0.21로 재조정하고 화면 클리핑 및 화면 밖 일반 몬스터 공격 대기를 적용했습니다. 상세: docs/PRESENTATION_FIXES.md. 생성 프롬프트: docs/PRESENTATION_ASSET_PROMPTS.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/PresentationFixCompile/compile.log. 플레이·QA·테스트 실행 없음.
+2026-11-02 화면 표현 통합 수정: 스킬 15종 실제 이미지 이펙트, 장비 5종 이미지(인벤토리·장착 칸·상점·강화·보상), 1~7층 보스 대화 초상화를 연결했습니다. 공중 베기 배율을 본인 피드백에 따라 0.21로 재조정하고 화면 클리핑 및 화면 밖 일반 몬스터 공격 대기를 적용했습니다. 상세: docs/PRESENTATION_FIXES.md. 생성 프롬프트: docs/PRESENTATION_ASSET_PROMPTS.md. Core·Runtime·Editor·Tests 컴파일 통과: Temp/PresentationFixCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
 2026-11-02 점프 공격 크기 수정: 공중 베기의 표시 배율을 0.24에서 0.18로 줄이고, 준비·베기·회수 8개 프레임에 동일하게 적용했습니다. 골반 기준 위치와 기존 공격 판정은 유지합니다. 상세: docs/ATTACK_FRAMES.md. Core·Runtime·Editor·Tests 컴파일 통과. 로그: Temp/AirAttackScaleCompile/compile.log. 플레이·QA·테스트 실행 없음.
 
@@ -52,7 +52,7 @@ Unity 버전: 6000.3.27f1. 프로젝트 여는 방법은 [상위 게임 안내](
 
 2026-10-31 후반부 확장: 4층 바르칸 → 5층 거울 성역/리세아 → 6층 일식의 첨탑/녹티스 → 7층 꺼진 태양의 왕좌/솔베인. 각 층 전투방 3개와 보스방, 전용 도트·3종 공격·체력 절반 2페이즈·등장/처치 대사·상자·순차 포탈을 연결했습니다. 획득한 모든 스킬, HP, 장비와 성장은 유지됩니다. 7층 처치 후 양어머니 구출과 태양 복귀 연출, 마지막 포탈에서 결말로 이어집니다. 상세: docs/SEVEN_CHAPTER_CAMPAIGN.md. 검증은 컴파일만 수행하며 플레이·QA·테스트 실행은 하지 않습니다.
 
-> 최신 변경(2026-10-27): 사용자 참고 이미지로 재생성한 고딕 도트 배경을 불씨 마을에 적용했습니다. 대장간·등불 쉼터·상점·성문과 기존 NPC를 연결했습니다. 생성 프롬프트와 경로는 `docs/VILLAGE_BACKGROUND.md`, 컴파일 로그는 `Temp/VillageBackgroundCompile/compile.log`입니다. 플레이·QA·테스트 실행은 하지 않았습니다.
+> 최신 변경(2026-10-27): 본인 참고 이미지로 재생성한 고딕 도트 배경을 불씨 마을에 적용했습니다. 대장간·등불 쉼터·상점·성문과 기존 NPC를 연결했습니다. 생성 프롬프트와 경로는 `docs/VILLAGE_BACKGROUND.md`, 컴파일 로그는 `Temp/VillageBackgroundCompile/compile.log`입니다. 플레이·QA·테스트 실행은 하지 않았습니다.
 
 > 1탄은 숲 입구 → 무너진 정원 → 악마 주둔지 → 공중 보스 성소의 네 방입니다. 배치와 진행 규칙은 `docs/CHAPTER_ONE_ROOMS.md`를 참고하세요.
 
@@ -115,7 +115,7 @@ Unity / C# 2D 횡스크롤 싱글 액션 프로토타입입니다. 게임명은 
 
 1. Unity Hub에서 이 폴더의 `Assets`, `Packages`, `ProjectSettings`가 있는 프로젝트를 엽니다.
 2. 현재 컴파일 확인에 사용한 설치 버전은 **6000.3.27f1**입니다. 원래 프로젝트 기준 버전은 6000.0.58f2입니다.
-3. Unity의 **Sunfall → Open Prototype**으로 씬을 엽니다. 사용자 QA 시 Play를 누르고 여정을 새로 시작합니다.
+3. Unity의 **Sunfall → Open Prototype**으로 씬을 엽니다. 본인 QA 시 Play를 누르고 여정을 새로 시작합니다.
 4. 게임은 실행 시 구성됩니다. 에디터 메뉴의 **Sunfall → Build Windows Prototype**으로 플레이어 빌드를 만들 수 있으며 해당 플랫폼 지원 모듈이 필요합니다.
 
 ## 기본 조작
@@ -144,7 +144,7 @@ Unity / C# 2D 횡스크롤 싱글 액션 프로토타입입니다. 게임명은 
 
 2026-10-26 비행 보스·패턴·전용 맵 변경: Unity 6000.3.27f1의 Roslyn과 프로젝트 Bee 참조 설정으로 Core / Runtime / Editor / Tests 및 독립 CoreTests 프로그램을 **컴파일만 확인**했습니다. 로그는 `Temp/AerialBossCompile/compile.log`입니다.
 
-사용자 요청에 따라 Play 모드, 자동 테스트 실행, 실제 게임 QA, 플랫폼 빌드는 실행하지 않았습니다. 이전 버전에서 기록한 테스트 통과는 이번 맵·전투 변경의 결과가 아닙니다. 난이도, 카메라 이동감, 발판 동선, 공격 가독성은 사용자 QA 후 조정합니다.
+본인 요청에 따라 Play 모드, 자동 테스트 실행, 실제 게임 QA, 플랫폼 빌드는 실행하지 않았습니다. 이전 버전에서 기록한 테스트 통과는 이번 맵·전투 변경의 결과가 아닙니다. 난이도, 카메라 이동감, 발판 동선, 공격 가독성은 본인 QA 후 조정합니다.
 
 1탄 보스 아트 변경도 Core / Runtime / Editor / Tests 및 CoreChecks 컴파일을 확인했습니다. 로그는 `Temp/BossCompile/compile.log`이며 플레이와 테스트 실행은 하지 않았습니다.
 

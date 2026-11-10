@@ -54,4 +54,4 @@ MoonBlades는 공통 템플릿의 `aged gold accents, `를 생략했습니다. N
 
 ## 확인 범위
 
-생성 이미지의 내용과 에셋 대응 관계를 확인했습니다. C# 컴파일 로그는 `Temp/SkillIconsCompile/compile.log`입니다. Unity Play·게임 QA·테스트 실행·플레이어 빌드는 하지 않습니다. 실제 화면 배치와 재사용 대기 표시는 사용자가 QA합니다.
+생성 이미지의 내용과 에셋 대응 관계를 확인했습니다. C# 컴파일 로그는 `Temp/SkillIconsCompile/compile.log`입니다. Unity Play·게임 QA·테스트 실행·플레이어 빌드는 하지 않습니다. 실제 화면 배치와 재사용 대기 표시는 본인이 QA합니다.

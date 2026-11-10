@@ -1,6 +1,6 @@
 # 6스테이지 — 일식의 첨탑 / 녹티스 리디자인
 
-2026-11-04. 사용자 참고 3장에 맞춰 built-in image_gen으로 제작. Unity Play 및 게임 QA 미실행.
+2026-11-04. 본인 참고 3장에 맞춰 built-in image_gen으로 제작. Unity Play 및 게임 QA 미실행.
 
 ## 구현
 - 밤의 기단: 달빛 아래 가고일과 고딕 탑 진입로.
@@ -40,7 +40,7 @@ PNG 원본 크기와 알파를 유지해 복사했으며 이미지 스크립트 
 ## 검증
 `tools/Compile-AttackArt.ps1 -OutputFolder Temp/Stage6EclipseCompile` 실행: Core/Runtime/Editor/Tests 모두 exit=0. Tests는 소스 컴파일만 했고 실행하지 않음.
 로그: `Sunfall/Temp/Stage6EclipseCompile/compile.log`.
-이미지 해상도/알파, 모든 몸·초상화 셀의 여백, 리소스 경로, GUID 중복 여부 정적 확인. 실제 게임 화면 가독성과 연출 타이밍은 사용자 QA 대상. F6은 기존 개발자 6스테이지 첫 방 이동 키.
+이미지 해상도/알파, 모든 몸·초상화 셀의 여백, 리소스 경로, GUID 중복 여부 정적 확인. 실제 게임 화면 가독성과 연출 타이밍은 본인 QA 대상. F6은 기존 개발자 6스테이지 첫 방 이동 키.
 
 ## 생성 프롬프트 원문
 

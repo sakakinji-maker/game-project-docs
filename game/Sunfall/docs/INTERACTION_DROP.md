@@ -11,4 +11,4 @@
 ## 확인
 
 Core / Runtime / Editor / Tests 컴파일 확인. 로그: `Temp/InteractionDropCompile/compile.log`.
-낮은 발판 착지, 원래 발판 재착지, 지면 보호, 아래키 단독 입력 테스트 소스를 추가했습니다. 사용자 QA 방침에 따라 테스트 실행·Unity Play·게임플레이 확인은 하지 않습니다.
+낮은 발판 착지, 원래 발판 재착지, 지면 보호, 아래키 단독 입력 테스트 소스를 추가했습니다. 본인 QA 방침에 따라 테스트 실행·Unity Play·게임플레이 확인은 하지 않습니다.

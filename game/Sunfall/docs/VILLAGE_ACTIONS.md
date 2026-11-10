@@ -24,4 +24,4 @@ tools/Compile-AttackArt.ps1 -OutputFolder Temp/VillageActionsCompile
 Core·Runtime·Editor·Tests 모두 exit=0.
 로그: Temp/VillageActionsCompile/compile.log.
 
-점프 후 공중 마법 발사/착지, 마을에서 전투방 진행·보상 차단, 획득 스킬 복사와 새 모험 초기화 규칙에 대한 회귀 테스트 3개를 추가했습니다. 사용자 요청에 따라 테스트는 컴파일만 했고 실행하지 않았습니다. Unity Play 및 QA도 진행하지 않았습니다.
+점프 후 공중 마법 발사/착지, 마을에서 전투방 진행·보상 차단, 획득 스킬 복사와 새 모험 초기화 규칙에 대한 회귀 테스트 3개를 추가했습니다. 본인 요청에 따라 테스트는 컴파일만 했고 실행하지 않았습니다. Unity Play 및 QA도 진행하지 않았습니다.

@@ -13,4 +13,4 @@
 
 Core / Runtime / Editor / Tests 및 독립 CoreChecks 컴파일만 확인합니다. 로그: `Temp/BossIntroCompile/compile.log`.
 기존 보스 테스트의 준비 절차에 등장씬 대기를 추가하고, 중앙 생성·연출 중 입력 차단·피해 방지·종료 후 이동 재개 테스트 소스를 추가했습니다.
-사용자 QA 방침에 따라 Unity Play, 테스트 실행, 실제 게임플레이 QA는 하지 않습니다.
+본인 QA 방침에 따라 Unity Play, 테스트 실행, 실제 게임플레이 QA는 하지 않습니다.

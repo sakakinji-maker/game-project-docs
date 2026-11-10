@@ -55,4 +55,4 @@
 - 로드 시 골드/레벨/능력치/강화 범위를 제한하며, 미보유 장비 강화 및 획득 포인트를 초과한 배분 데이터는 적용하지 않습니다.
 - 코드: `Core/RunModel.cs`의 PlayerProgression 및 EquipmentInventory, `Runtime/SunfallGame.Progression.cs`의 상점·성장·보상 UI와 저장.
 - Core / Runtime / Editor / Tests / 독립 CoreChecks를 Unity 6000.3.27f1 Roslyn으로 컴파일했습니다. 로그: `Temp/TownProgressionCompile/compile.log`.
-- 거래의 재화 부족/중복/강화 상한, 처치 중복 지급 방지, 경험치 이월, 포인트 예산과 전투 수치, 강화 복원에 대한 테스트 코드를 추가해 컴파일했습니다. 사용자 요청에 따라 테스트 실행, Play 모드, 게임 QA, 플레이어 빌드는 하지 않았습니다.
+- 거래의 재화 부족/중복/강화 상한, 처치 중복 지급 방지, 경험치 이월, 포인트 예산과 전투 수치, 강화 복원에 대한 테스트 코드를 추가해 컴파일했습니다. 본인 요청에 따라 테스트 실행, Play 모드, 게임 QA, 플레이어 빌드는 하지 않았습니다.

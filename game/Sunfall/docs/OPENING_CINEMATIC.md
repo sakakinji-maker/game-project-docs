@@ -62,4 +62,4 @@ Use case: stylized-concept. NEW full-screen landscape 16:9 cinematic final prolo
 
 ## 확인 범위
 
-생성 이미지 구성 및 코드·리소스 경로를 확인했습니다. C# 컴파일 로그: `Temp/OpeningCinematicCompile/compile.log`. Unity Play, 게임 QA, 테스트 실행, 플레이어 빌드는 하지 않습니다. 실제 전환과 자막 속도·pause/skip 동작은 사용자 QA 대상입니다.
+생성 이미지 구성 및 코드·리소스 경로를 확인했습니다. C# 컴파일 로그: `Temp/OpeningCinematicCompile/compile.log`. Unity Play, 게임 QA, 테스트 실행, 플레이어 빌드는 하지 않습니다. 실제 전환과 자막 속도·pause/skip 동작은 본인 QA 대상입니다.

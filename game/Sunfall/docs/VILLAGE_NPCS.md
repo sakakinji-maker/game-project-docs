@@ -1,6 +1,6 @@
 # 마을 NPC 도트 적용 — 2026-10-27
 
-사용자가 제공한 세 이미지를 기준으로 built-in image_gen 도구로 제작한 투명 도트 시트를 적용했다.
+본인이 제공한 세 이미지를 기준으로 built-in image_gen 도구로 제작한 투명 도트 시트를 적용했다.
 
 | NPC | 반영한 특징 | 리소스 |
 |---|---|---|
@@ -33,11 +33,11 @@ Unity Play, 게임 실행, 테스트 실행, 인게임 QA는 수행하지 않았
 
 재컴파일: 프로젝트 상위 폴더에서 `./tools/Compile-AttackArt.ps1 -OutputFolder Temp/VillageNpcCompile`.
 
-사용자가 언급한 Unity 메시지는 별도 확인 중이다. 확인한 Editor.log에는 C# 컴파일 오류가 없었으며, 메시지 원문을 요청했다. 컴파일 성공을 그 메시지 해결 확인으로 간주하지 않는다.
+본인이 언급한 Unity 메시지는 별도 확인 중이다. 확인한 Editor.log에는 C# 컴파일 오류가 없었으며, 메시지 원문을 요청했다. 컴파일 성공을 그 메시지 해결 확인으로 간주하지 않는다.
 
 ## 생성 프롬프트
 
-built-in image_gen / transparent_background=true. 각 요청의 첫 번째 참조는 사용자 이미지, 두 번째 참조는 Hero/HeroAtlas.png. 생성 원본은 기본 generated_images 위치에 보존하고 선택한 PNG를 프로젝트로 복사했다.
+built-in image_gen / transparent_background=true. 각 요청의 첫 번째 참조는 본인 이미지, 두 번째 참조는 Hero/HeroAtlas.png. 생성 원본은 기본 generated_images 위치에 보존하고 선택한 PNG를 프로젝트로 복사했다.
 
 ### BlacksmithV1
 참조: 중세 대장관.jpg

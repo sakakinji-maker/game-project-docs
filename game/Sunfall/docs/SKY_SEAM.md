@@ -24,4 +24,4 @@
 - `Runtime/SunfallGame.Rewards.cs`: 봉합 완료 자막.
 - 기존 IMGUI의 선·다각형·다이아몬드 그래픽을 사용한 동적 연출입니다. 새 이미지 에셋은 만들지 않았습니다.
 - Core / Runtime / Editor / Tests / 독립 CoreChecks 컴파일 성공. 로그: `Temp/SkySeamCompile/compile.log`.
-- 사용자 요청에 따라 Play 모드, 자동 테스트 실행, 게임 QA, 플레이어 빌드는 하지 않았습니다. 실제 화면 가독성과 연출 속도는 사용자 QA 대상입니다.
+- 본인 요청에 따라 Play 모드, 자동 테스트 실행, 게임 QA, 플레이어 빌드는 하지 않았습니다. 실제 화면 가독성과 연출 속도는 본인 QA 대상입니다.

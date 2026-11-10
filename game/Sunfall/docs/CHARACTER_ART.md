@@ -41,13 +41,13 @@
 
 PNG 크기·알파 채널과 생성 이미지 구성을 확인했다. Unity 6000.3.27f1 내장 컴파일러와 Bee 참조 설정으로 Core / Runtime / Editor / Tests 네 어셈블리를 컴파일했다. 출력 위치는 `Temp/CharacterCompile`이다.
 
-사용자 요청대로 Unity Play 모드, 자동 게임 실행, 플레이 및 게임 QA는 수행하지 않았다. 기존 대화 3페이지 관련 기록은 이 변경 이전 기록이다.
+본인 요청대로 Unity Play 모드, 자동 게임 실행, 플레이 및 게임 QA는 수행하지 않았다. 기존 대화 3페이지 관련 기록은 이 변경 이전 기록이다.
 
 ## 사용한 프롬프트
 
 ### 표시 누락 수정 기록
 
-2026-10-26 사용자 확인에서 캐릭터가 보이지 않는 문제가 보고되었다. Unity 에셋 진단 결과 두 PNG의 실제 타입이 `UnityEngine.Cubemap`이어서 `Resources.Load<Texture2D>`가 null을 반환했다. 기존 임포터는 `textureType`만 지정하고 `textureShape`를 지정하지 않았다.
+2026-10-26 본인 확인에서 캐릭터가 보이지 않는 문제가 보고되었다. Unity 에셋 진단 결과 두 PNG의 실제 타입이 `UnityEngine.Cubemap`이어서 `Resources.Load<Texture2D>`가 null을 반환했다. 기존 임포터는 `textureType`만 지정하고 `textureShape`를 지정하지 않았다.
 
 `TextureImporterShape.Texture2D`를 명시하고 기존 에셋도 재임포트했다. Unity 편집기에서 도트 시트는 `1024x1536 RGBA32 Point`, 초상화는 `1024x1536 RGBA32 Bilinear`의 Texture2D로 로딩되는 것을 확인했다. `Sunfall → Check Hero Resources (No Play)` 메뉴로 다시 조회할 수 있으며 결과는 `Temp/HeroResourceDiagnostics.txt`에 기록된다.
 
