@@ -2,9 +2,9 @@
 
 > 플레이하며 발견한 문제를 **재현 절차 · 기대 결과 · 우선순위**로 기록하고, 고친 뒤에는 **다시 깨지지 않는지** 확인합니다.
 
-유한대학교 게임콘텐츠학과 졸업 · 전공심화과정 재학 · sakakinji@naver.com
+유한대학교 게임콘텐츠학과 졸업 · 컴퓨터소프트웨어전공 전공심화과정 재학 (2027.02 졸업 예정) · sakakinji@naver.com
 
-**[QA 사례 모음](qa/README.md)** · **[웹게임 플레이](https://onecard-game.onrender.com)** · **[노션 포트폴리오](https://app.notion.com/p/401137cf520a818e95ecd37332cfd544)**
+**[QA 사례 모음](qa/README.md)** · **[웹게임 플레이](https://onecard-game.onrender.com)** · **[Notion QA 포트폴리오](https://www.notion.so/401137cf520a81e4b9cac4c9754fa617)**
 
 ## 한눈에 보기
 
